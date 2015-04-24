@@ -15,17 +15,18 @@ function scrollToElement(target) {
   smoothScroll(container, startY, endY, 0);
 }
 
-function expandPreview(title) {
-  var preview = title.parentNode;
+function expandPreview(preview) {
   if (!preview.classList.contains('active'))
     scrollToElement(preview);
   preview.classList.toggle('active');
+  preview.lastElementChild.style.top =
+    preview.firstElementChild.offsetHeight + 'px';
 }
 
 function rigPreviews() {
-  var titles = document.querySelectorAll('.preview .title');
-  for (var i = 0; i < titles.length; i++) {
-    titles[i].onclick = function(event) { expandPreview(event.target); };
+  var headings = document.querySelectorAll('.preview .heading');
+  for (var i = 0; i < headings.length; i++) {
+    headings[i].onclick = function(event) { expandPreview(event.target.parentNode); };
   }
 }
 
