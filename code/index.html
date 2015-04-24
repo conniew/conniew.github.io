@@ -1,0 +1,64 @@
+<html>
+<head>
+  <title>Code</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <div class="content">
+
+    <div class="preview">
+      <div class="title">Testing 1</div>
+      <div class="inner">
+        Content 1
+      </div>
+    </div>
+    <div class="preview">
+      <div class="title">Testing 2</div>
+      <div class="inner">
+        Content 2
+      </div>
+    </div>
+    <div class="preview">
+      <div class="title">Testing 3</div>
+      <div class="inner">
+        Content 3
+      </div>
+    </div>
+    <div class="preview">
+      <div class="title">Testing 4</div>
+      <div class="inner">
+        Content 4
+      </div>
+    </div>
+    <div class="preview">
+      <div class="title">Testing 5</div>
+      <div class="inner">
+        Content 5
+      </div>
+    </div>
+    <div class="preview">
+      <div class="title">Testing 6</div>
+      <div class="inner">
+        Content 6
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <a href="../">Home</a>
+    <a href="../pictures" class="active">Pictures</a>
+    <a href="../words">Words</a>
+    <a href="../code">Code</a>
+    <a href="../ideas">Ideas</a>
+    <a href="../me">Me</a>
+  </div>
+
+  <script type="text/javascript" src="../scripts.js"></script>
+  <script>
+    var titles = document.querySelectorAll('.title');
+    for (var i = 0; i < titles.length; i++) {
+      titles[i].onclick = function(event) { expandPreview(event.target); };
+    }
+  </script>
+</body>
+</html>
