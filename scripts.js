@@ -21,3 +21,12 @@ function expandPreview(title) {
     scrollToElement(preview);
   preview.classList.toggle('active');
 }
+
+function rigPreviews() {
+  var titles = document.querySelectorAll('.preview .title');
+  for (var i = 0; i < titles.length; i++) {
+    titles[i].onclick = function(event) { expandPreview(event.target); };
+  }
+}
+
+rigPreviews();
