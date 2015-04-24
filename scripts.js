@@ -10,7 +10,7 @@ function scrollToElement(target) {
   var container = target.parentNode;
 
   var startY = container.scrollTop;
-  var endY = target.offsetTop - 2; // 2px offset for border-top
+  var endY = target.offsetTop;
 
   smoothScroll(container, startY, endY, 0);
 }
