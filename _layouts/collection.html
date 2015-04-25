@@ -1,6 +1,6 @@
 <html>
 <head>
-<title>{% page.title %}</title>
+<title>{{ page.title }}</title>
   <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
@@ -9,12 +9,12 @@
     {% for item in site[page.path] %}
       <div class="preview">
         <div class="heading">
-          <div class="title"> {% item.title %} </div>
-          <div class="subtitle"> {% item.subtitle %} </div>
+          <div class="title"> {{ item.title }} </div>
+          <div class="subtitle"> {{ item.subtitle }} </div>
         </div>
         <div class="content">
           <div class="inner">
-            {% item.content %}
+            {{ item.content }}
           </div>
         </div>
       </div>
@@ -25,9 +25,9 @@
   <div id="footer">
     <a href="../">Home</a>
     {% for collection in site.collections %}
-      <a href="../{% collection.path %}"
+      <a href="../{{ collection.path }}"
               {% if collection.path == page.path %} class="active" {% endif %}>
-        {% collection.title %}
+        {{ collection.title }}
       </a>
     {% endfor %}
   </div>
