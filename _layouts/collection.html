@@ -4,6 +4,13 @@
   <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
+  <div id="controls">
+    <button class="control prev"></button>
+    <button class="control next"></button>
+    <button class="control expand" onclick="expandAll()"></button>
+    <button class="control collapse" onclick="collapseAll()"></button>
+  </div>
+
   <div id="content">
 
     {% for item in site[page.path] %}

@@ -305,3 +305,141 @@ body {
 }
 
 /* End preview panels */
+
+
+/* Begin control buttons */
+
+#controls {
+  position: absolute;
+  top: 0;
+}
+
+.control {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+
+  padding: 0;
+  outline: 0;
+
+  border: 2px solid #666666;
+  border-radius: 50%;
+  background-color: #C0C0C0;
+
+  color: #666666;
+
+  cursor: pointer;
+
+  z-index: 5;
+}
+
+.control::-moz-focus-inner {
+  border: 0;
+}
+
+.control:disabled {
+  opacity: 0.5;
+
+  cursor: default;
+}
+
+/* To previous page */
+.control.prev {
+  left: 25px;
+  top: 15px;
+}
+
+.control.prev:after {
+  content: "";
+
+  position: relative;
+  left: 16px;
+  width: 20px;
+  height: 20px;
+  display: block;
+
+  border-top: 2px solid #666666;
+  border-left: 2px solid #666666;
+  border-radius: 2px;
+
+  -ms-transform: scaleY(0.7) rotate(-45deg);
+  -webkit-transform: scaleY(0.7) rotate(-45deg);
+  transform: scaleY(0.7) rotate(-45deg);
+}
+
+/* To next page */
+.control.next {
+  right: 25px;
+  top: 15px;
+}
+
+.control.next:after {
+  content: "";
+
+  position: relative;
+  right: -5px;
+  width: 20px;
+  height: 20px;
+  display: block;
+
+  border-top: 2px solid #666666;
+  border-right: 2px solid #666666;
+  border-radius: 2px;
+
+  -ms-transform: scaleY(0.7) rotate(45deg);
+  -webkit-transform: scaleY(0.7) rotate(45deg);
+  transform: scaleY(0.7) rotate(45deg);
+}
+
+/* Expand all */
+.control.expand {
+  right: 25px;
+  top: 80px;
+}
+
+.control.expand:before {
+  content: "";
+
+  position: relative;
+  left: 20px;
+  top: 2px;
+  width: 0;
+  height: 20px;
+  display: block;
+
+  border-left: 2px solid #666666;
+}
+
+.control.expand:after {
+  content: "";
+
+  position: relative;
+  left: 11px;
+  top: -9px;
+  width: 20px;
+  height: 0;
+  display: block;
+
+  border-top: 2px solid #666666;
+}
+
+/* Collapse all */
+.control.collapse {
+  right: 25px;
+  top: 145px;
+}
+
+.control.collapse:after {
+  content: "";
+
+  position: relative;
+  left: 11px;
+  top: 1px;
+  width: 20px;
+  height: 0;
+  display: block;
+
+  border-top: 2px solid #666666;
+}
+
+/* End control buttons */
