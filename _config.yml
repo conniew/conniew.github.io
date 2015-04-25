@@ -1,6 +1,11 @@
 collections:
-  - pictures
-  - words
-  - code
-  - ideas
-  - me
+  pictures:
+    output: true
+  words:
+    output: true
+  code:
+    output: true
+  ideas:
+    output: true
+  me:
+    output: true

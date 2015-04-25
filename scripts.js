@@ -19,8 +19,8 @@ function expandPreview(preview) {
   if (!preview.classList.contains('active'))
     scrollToElement(preview);
   preview.classList.toggle('active');
-  preview.lastElementChild.style.top =
-    preview.firstElementChild.offsetHeight + 'px';
+  preview.querySelector('.body').style.top =
+    preview.querySelector('.heading').offsetHeight + 'px';
 }
 
 function rigPreviews() {

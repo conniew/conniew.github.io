@@ -170,7 +170,7 @@ body {
 }
 
 .preview.active {
-  height: 100%;
+  height: calc(100% - 4px);
 }
 
 /* Heading container */
@@ -265,19 +265,35 @@ body {
 }
 
 /* Content container */
-.preview .content {
+.preview .body {
   position: absolute;
   top: 50px;
   bottom: 0;
   left: 0;
   right: 0;
 
-  overflow-y: auto;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
-.preview .content .inner {
+.preview .body .content {
+  width: calc(100% - 40px);
+  height: calc(100% - 45px);
   padding: 0 20px 20px;
+
+  overflow: auto;
+}
+
+.preview .body .permalink {
+  position: absolute;
+  bottom: 0;
+  padding: 5px 10px;
+  height: 15px;
+  width: calc(100% - 20px);
+
+  background-color: #E0E0E0;
+  border-top: 1px solid #666666;
+
+  font-size: 12px;
 }
 
 /* End preview panels */

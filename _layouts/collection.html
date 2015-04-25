@@ -12,11 +12,13 @@
           <span class="title"> {{ item.title }} </span>
           <span class="subtitle"> {{ item.subtitle }} </span>
         </div>
-        <div class="content">
-          <div class="inner">
+        <div class="body">
+          <div class="content">
             {{ item.content }}
+            <br><br><br>
           </div>
         </div>
+        <div class="permalink">Permalink: <a href="{{ item.url }}">{{ item.url }}</a></div>
       </div>
     {% endfor %}
 
