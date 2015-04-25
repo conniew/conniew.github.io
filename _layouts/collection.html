@@ -25,7 +25,7 @@
   <div id="footer">
     <a href="../">Home</a>
     {% for collection in site.collections %}
-      <a href="../{{ collection.path }}"
+      <a href="../{{ collection | first }}"
               {% if collection.path == page.path %} class="active" {% endif %}>
         {{ collection.title }}
       </a>
