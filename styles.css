@@ -264,6 +264,14 @@ body {
   transform: rotate(-135deg);
 }
 
+.preview .heading.static {
+  pointer-events: none;
+}
+
+.preview .heading.static:after {
+  border: none;
+}
+
 /* Content container */
 .preview .body {
   position: absolute;
