@@ -23,10 +23,10 @@
   </div>
 
   <div id="footer">
-    <a href="../">Home</a>
+    <a href="../">home</a>
     {% for collection in site.collections %}
       <a href="../{{ collection | first }}"
-              {% if (collection | first) == page.path %} class="active" {% endif %}>
+              {% if ((collection | first) == page.path) %} class="active" {% endif %}>
         {{collection | first}}
       </a>
     {% endfor %}

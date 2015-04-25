@@ -21,12 +21,12 @@
   </div>
 
   <div id="footer">
-    <a href="../">Home</a>
-    <a href="../pictures">Pictures</a>
-    <a href="../words">Words</a>
-    <a href="../code">Code</a>
-    <a href="../ideas">Ideas</a>
-    <a href="../me">Me</a>
+    <a href="../">home</a>
+    {% for collection in site.collections %}
+      <a href="../{{ collection | first }}">
+        {{collection | first}}
+      </a>
+    {% endfor %}
   </div>
 </body>
 </html>
