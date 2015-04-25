@@ -1,0 +1,37 @@
+<html>
+<head>
+<title>{% page.title %}</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <div id="content">
+
+    {% for item in site[page.path] %}
+      <div class="preview">
+        <div class="heading">
+          <div class="title"> {% item.title %} </div>
+          <div class="subtitle"> {% item.subtitle %} </div>
+        </div>
+        <div class="content">
+          <div class="inner">
+            {% item.content %}
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+
+  </div>
+
+  <div id="footer">
+    <a href="../">Home</a>
+    {% for collection in site.collections %}
+      <a href="../{% collection.path %}"
+              {% if collection.path == page.path %} class="active" {% endif %}>
+        {% collection.title %}
+      </a>
+    {% endfor %}
+  </div>
+
+  <script type="text/javascript" src="../scripts.js"></script>
+</body>
+</html>

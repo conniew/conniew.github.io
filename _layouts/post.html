@@ -1,0 +1,32 @@
+<html>
+<head>
+<title> {% page.title %} </title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="content">
+
+    <div class="preview active">
+      <div class="heading">
+        <div class="title"> {% page.title %} </div>
+        <div class="subtitle"> {% page.subtitle %} </div>
+      </div>
+      <div class="content">
+        <div class="inner">
+          {% content %}
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div id="footer">
+    <a href="../">Home</a>
+    <a href="../pictures">Pictures</a>
+    <a href="../words">Words</a>
+    <a href="../code">Code</a>
+    <a href="../ideas">Ideas</a>
+    <a href="../me">Me</a>
+  </div>
+</body>
+</html>
