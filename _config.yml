@@ -1,16 +1,6 @@
 collections:
-  pictures:
-    title: "Pictures"
-    path: "pictures"
-  words:
-    title: "Words"
-    path: "words"
-  code:
-    title: "Code"
-    path: "code"
-  ideas:
-    title: "Ideas"
-    path: "ideas"
-  me:
-    title: "Me"
-    path: "me"
+  - pictures
+  - words
+  - code
+  - ideas
+  - me
