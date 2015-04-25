@@ -17,7 +17,7 @@
             {{ item.content }}
             <br><br><br>
           </div>
-          <div class="permalink">Permalink: <a href="{{ item.url }}">{{ item.url }}</a></div>
+          <div class="permalink">Permalink: <a href="{{ item.url }}">{{ site.baseurl }}{{ item.url }}</a></div>
         </div>
       </div>
     {% endfor %}
