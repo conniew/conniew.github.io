@@ -6,14 +6,14 @@
   left: 0;
   right: 0;
   top: 0;
-  bottom: 30px;
+  bottom: 30px; /* footer */
 
   overflow-y: scroll;
   overflow-x: hidden;
 }
 
 /* Footer on all pages */
-#footer {
+#footer { /* 30px */
   position: absolute;
   left: 0;
   right: 0;
@@ -141,7 +141,7 @@ body {
 
 /* Begin preview panels */
 
-.preview {
+.preview { /* Collapsed: 50px */
   position: relative;
   height: 50px;
 
@@ -174,7 +174,7 @@ body {
 }
 
 /* Heading container */
-.preview .heading {
+.preview .heading { /* min: 50px */
   min-height: 30px;
   margin: 0;
   padding: 10px 30px 10px 20px;
@@ -275,7 +275,7 @@ body {
 /* Content container */
 .preview .body {
   position: absolute;
-  top: 50px;
+  top: 50px; /* preview heading, adjusted dynamically */
   bottom: 0;
   left: 0;
   right: 0;
@@ -285,13 +285,13 @@ body {
 
 .preview .body .content {
   width: calc(100% - 40px);
-  height: calc(100% - 45px);
-  padding: 0 20px 20px;
+  height: calc(100% - 26px); /* permalink */
+  padding: 0 20px;
 
   overflow: auto;
 }
 
-.preview .body .permalink {
+.preview .body .permalink { /* 26px */
   position: absolute;
   bottom: 0;
   padding: 5px 10px;
