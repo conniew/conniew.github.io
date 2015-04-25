@@ -6,8 +6,8 @@
 <body>
   <div id="content">
 
-    <div class="preview active">
-      <div class="heading">
+    <div class="preview" style="height: calc(100%, 4px)">
+      <div class="heading" style="pointer-events: none;">
         <span class="title"> {{ page.title }} </span>
         <span class="subtitle"> {{ page.subtitle }} </span>
       </div>
@@ -29,5 +29,10 @@
       </a>
     {% endfor %}
   </div>
+
+  <script type="text/javascript">
+    document.querySelector('.body').style.top =
+        document.querySelector('.heading').offsetHeight + 'px';
+  </script>
 </body>
 </html>
