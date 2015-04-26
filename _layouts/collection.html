@@ -3,7 +3,7 @@
 <title>{{ page.title }}</title>
   <link rel="stylesheet" href="../styles.css">
   {% for item in site[page.path] %}
-    {% assign extension = item.relative_path | slice: -2, 3 %}
+    {% assign extension = item.relative_path | split: '.' | last %}
     {% if extension == 'css' %}
       {{ item.content }}
     {% endif %}
@@ -21,8 +21,7 @@
 
     {% assign items = site[page.path] | sort: 'date' %}
     {% for item in items %}
-      {% assign extension = item.relative_path | slice: -3, 4 %}
-      {{ extension }}
+      {% assign extension = item.relative_path | split: '.' | last %}
       {% if extension == 'html' %}
         <div class="preview">
           <div class="heading">
