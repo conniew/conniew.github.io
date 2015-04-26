@@ -6,7 +6,7 @@
   <style type="text/css">
     {% for item in site[page.path] %}
       {% assign extension = item.relative_path | split: '.' | last %}
-      {% if extension == 'css' %}
+      {% if extension == 'scss' %}
         {{ item.content }}
       {% endif %}
     {% endfor %}
