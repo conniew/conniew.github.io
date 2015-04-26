@@ -2,12 +2,15 @@
 <head>
 <title>{{ page.title }}</title>
   <link rel="stylesheet" href="../styles.css">
+
+  <style type="text/css">
   {% for item in site[page.path] %}
     {% assign extension = item.relative_path | split: '.' | last %}
     {% if extension == 'css' %}
-      {{ item.content }}
+        {{ item.content }}
     {% endif %}
   {% endfor %}
+  </style>
 </head>
 <body>
   <div id="controls">
