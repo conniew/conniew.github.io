@@ -3,9 +3,10 @@
 <title>{{ page.title }}</title>
   <link rel="stylesheet" href="../styles.css">
   {% for item in site[page.path] %}
-    <link rel="stylesheet" href="../{{ item.relative_path | replace: 'html', 'css' }}">
+    {% if item.relative_path[-3..-1] == 'css' %}
+      {{ item.content }}
+    {% endif %}
   {% endfor %}
-  <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
   <div id="controls">
@@ -19,19 +20,23 @@
 
     {% assign items = site[page.path] | sort: 'date' %}
     {% for item in items %}
-      <div class="preview">
-        <div class="heading">
-          <span class="title"> {{ item.title }} </span>
-          <span class="subtitle"> {{ item.subtitle }} </span>
-        </div>
-        <div class="body">
-          <div class="content">
-            {{ item.content }}
-            <br><br><br>
+      {% if item.relative_path[-4..-1] == 'html' %}
+        <div class="preview">
+          <div class="heading">
+            <span class="title"> {{ item.title }} </span>
+            <span class="subtitle"> {{ item.subtitle }} </span>
           </div>
-          <div class="permalink">Permalink: <a href="{{ item.url }}">http://con.ilogues.com{{ item.url }}</a></div>
+          <div class="body">
+            <div class="content">
+              {{ item.content }}
+              <br><br><br>
+            </div>
+            <div class="permalink">Permalink:
+              <a href="{{ item.url }}">http://con.ilogues.com{{ item.url }}</a>
+            </div>
+          </div>
         </div>
-      </div>
+      {% endif %}
     {% endfor %}
 
   </div>
