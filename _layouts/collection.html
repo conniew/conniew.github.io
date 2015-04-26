@@ -2,6 +2,10 @@
 <head>
 <title>{{ page.title }}</title>
   <link rel="stylesheet" href="../styles.css">
+  {% for item in site[page.path] %}
+    <link rel="stylesheet" href="..{{ item.relative_path.sub('html', 'css') }}">
+  {% endfor %}
+  <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
   <div id="controls">
@@ -13,7 +17,7 @@
 
   <div id="content">
 
-    {% for item in site[page.path] %}
+    {% for item in site[page.path] | sort: 'date' %}
       <div class="preview">
         <div class="heading">
           <span class="title"> {{ item.title }} </span>

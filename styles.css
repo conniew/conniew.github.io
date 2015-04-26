@@ -158,6 +158,8 @@ body {
   background: -moz-linear-gradient(#FFF0F5, #FFF0F5 50px, #FFFFFF 75px);
   background: linear-gradient(#FFF0F5, #FFF0F5 50px, #FFFFFF 75px);
 
+  font-family: Times;
+
   transition: height 0.3s ease 0s, border-width 0.3s ease 0s;
 }
 
@@ -288,7 +290,8 @@ body {
   height: calc(100% - 26px); /* permalink */
   padding: 0 20px;
 
-  overflow: auto;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 .preview .body .permalink { /* 26px */
