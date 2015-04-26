@@ -4,12 +4,12 @@
   <link rel="stylesheet" href="../styles.css">
 
   <style type="text/css">
-  {% for item in site[page.path] %}
-    {% assign extension = item.relative_path | split: '.' | last %}
-    {% if extension == 'css' %}
+    {% for item in site[page.path] %}
+      {% assign extension = item.relative_path | split: '.' | last %}
+      {% if extension == 'css' %}
         {{ item.content }}
-    {% endif %}
-  {% endfor %}
+      {% endif %}
+    {% endfor %}
   </style>
 </head>
 <body>
@@ -22,11 +22,11 @@
 
   <div id="content">
 
-    {% assign items = site[page.path] | sort: 'date' %}
+    {% assign items = site[page.path] | sort: 'date' reversed %}
     {% for item in items %}
       {% assign extension = item.relative_path | split: '.' | last %}
       {% if extension == 'html' %}
-        <div class="preview">
+      <div class="preview" id="{{ item.relative_path | split: '/' | last | split: '.' | first }}">
           <div class="heading">
             <span class="title"> {{ item.title }} </span>
             <span class="subtitle"> {{ item.subtitle }} </span>
