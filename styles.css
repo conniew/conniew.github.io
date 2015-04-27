@@ -28,7 +28,7 @@
 }
 
 /* Footer navigation links */
-#footer :not(#word) a {
+#footer a {
   float: left;
   position: relative;
   width: calc(100% / 6);
@@ -68,7 +68,19 @@
 }
 
 #footer #word a {
+  float: none;
+  width: auto;
+  height: auto;
+
+  display: inline;
+
+  color: #8B0000;
   text-decoration: none;
+  text-transform: none;
+  text-align: left;
+  font-size: initial;
+  line-height: initial;
+  font-weight: normal;
 }
 
 #footer #word a:hover {
