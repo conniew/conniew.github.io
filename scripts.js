@@ -1,6 +1,3 @@
-var expandControl = document.querySelector('.control.expand');
-var collapseControl = document.querySelector('.control.collapse');
-
 function setControls() {
   document.querySelector('#controls').style.width =
       document.querySelector('#content').clientWidth + 'px';
@@ -11,6 +8,8 @@ function setControls() {
 }
 
 function updateControls() {
+  var expandControl = document.querySelector('.control.expand');
+  var collapseControl = document.querySelector('.control.collapse');
   expandControl.disabled = !document.querySelector('.preview:not(.active)');
   collapseControl.disabled = !document.querySelector('.preview.active');
 }
