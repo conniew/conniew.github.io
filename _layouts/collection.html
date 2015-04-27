@@ -3,14 +3,12 @@
 <title>{{ page.title }}</title>
   <link rel="stylesheet" href="../styles.css">
 
-  <style type="text/css">
-    {% for item in site[page.path] %}
-      {% assign extension = item.relative_path | split: '.' | last %}
-      {% if extension == 'scss' %}
-        {{ item.content }}
-      {% endif %}
-    {% endfor %}
-  </style>
+  {% for item in site[page.path] %}
+    {% assign extension = item.relative_path | split: '.' | last %}
+    {% if extension == 'scss' %}
+      <link rel="stylesheet" href="{{ item.url }}">
+    {% endif %}
+  {% endfor %}
 </head>
 <body onload="loadCollectionPage()">
   <div id="controls">
