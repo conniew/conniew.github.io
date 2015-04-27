@@ -1,0 +1,24 @@
+---
+---
+#wordsmith {
+
+  #word {
+    position: relative;
+    width: 200px;
+    left: calc(50% - 100px);
+    text-align: center;
+    font-size: 12px;
+    cursor: pointer;
+  }
+
+  #word a {
+    text-decoration: none;
+    font-size: 24px;
+    color: darkred;
+  }
+
+  #word a:hover {
+    background: none;
+  }
+
+}

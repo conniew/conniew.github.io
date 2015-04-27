@@ -62,7 +62,48 @@ function rigPreviews() {
   }
 }
 
+var words = [
+  'aftermath',
+  'arcane',
+  'cacophany',
+  'capricious',
+  'deuteron',
+  'echelon',
+  'enigma',
+  'encroach',
+  'extricate',
+  'formulaic',
+  'friction',
+  'gall',
+  'inter',
+  'kayak',
+  'memo',
+  'monogram',
+  'orchestrate',
+  'pantomime',
+  'penchant',
+  'permanence',
+  'porcine',
+  'progeny',
+  'sentinel',
+  'spatula',
+  'synonym',
+  'syzygy'
+];
+
+function getWord() {
+  var index = Math.floor(Math.random() * words.length);
+  return words[index];
+}
+
+function updateWord() {
+  var wordContainer = document.querySelector('#word a');
+  if (wordContainer)
+    wordContainer.innerHTML = getWord();
+}
+
 
 rigPreviews();
 setControls();
 updateControls();
+updateWord();
