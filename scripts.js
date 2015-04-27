@@ -106,7 +106,6 @@ function loadCollectionPage() {
   rigPreviews();
   setControls();
   updateControls();
-  updateWord();
 }
 
 function loadOverviewPage() {
