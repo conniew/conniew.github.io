@@ -102,8 +102,13 @@ function updateWord() {
     wordContainer.innerHTML = getWord();
 }
 
+function loadCollectionPage() {
+  rigPreviews();
+  setControls();
+  updateControls();
+  updateWord();
+}
 
-rigPreviews();
-setControls();
-updateControls();
-updateWord();
+function loadOverviewPage() {
+  updateWord();
+}
