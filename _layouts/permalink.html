@@ -5,6 +5,8 @@
   <link rel="stylesheet" href="{{ page.url | replace: 'html', 'css'}}">
 </head>
 <body>
+  <script type="text/javascript" src="../scripts.js"></script>
+
   <div id="content">
 
     <div class="preview active" id="{{ page.relative_path | split: '/' | last | split: '.' | first }}">
@@ -31,7 +33,6 @@
     {% endfor %}
   </div>
 
-  <script type="text/javascript" src="../scripts.js"></script>
   <script type="text/javascript">
     document.querySelector('.body').style.top =
         document.querySelector('.heading').offsetHeight + 'px';
