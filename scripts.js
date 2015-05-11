@@ -33,7 +33,7 @@ function smoothScroll(container, y1, y2, t) {
   container.scrollTop = y1 + t*(y2 - y1)/30;
   setTimeout(function() {
     smoothScroll(container, y1, y2, ++t);
-  }, 10);
+  }, 5);
 }
 
 function scrollToElement(target) {

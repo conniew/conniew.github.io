@@ -230,6 +230,7 @@ body {
 
 .preview.active .heading {
   white-space: normal;
+  color: #666666;
 }
 
 /* Title font */
@@ -249,13 +250,9 @@ body {
 
 /* Hover state */
 .preview .heading:hover {
-  color: #777777;
+  color: #666666;
 
   cursor: pointer;
-}
-
-.preview.active .heading:hover {
-  color: #A9A9A9;
 }
 
 .preview .heading:hover .title {
