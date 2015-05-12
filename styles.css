@@ -127,9 +127,9 @@ body {
 
 
 
-/* Begin overview panels */
+/* Begin portal panels */
 
-.overview {
+.portal {
   position: relative;
   float: left;
   height: 100%;
@@ -144,7 +144,7 @@ body {
   font-size: 20px;
 }
 
-.overview .heading {
+.portal .heading {
   position: relative;
   left: 0;
   right: 0;
@@ -153,12 +153,12 @@ body {
   color: #666666;
 }
 
-.overview:hover .heading {
+.portal:hover .heading {
   border-color: #000000;
   color: #000000;
 }
 
-.overview a {
+.portal a {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -167,7 +167,7 @@ body {
   z-index: 1;
 }
 
-/* End overview panels */
+/* End portal panels */
 
 
 
@@ -205,6 +205,13 @@ body {
 
 .preview.active {
   height: 100%;
+}
+
+.preview.intro {
+  background: -webkit-linear-gradient(#F0FFF5, #F0FFF5 50px, #FFFFFF 75px);
+  background: -o-linear-gradient(#F0FFF5, #F0FFF5 50px, #FFFFFF 75px);
+  background: -moz-linear-gradient(#F0FFF5, #F0FFF5 50px, #FFFFFF 75px);
+  background: linear-gradient(#F0FFF5, #F0FFF5 50px, #FFFFFF 75px);
 }
 
 /* Heading container */
