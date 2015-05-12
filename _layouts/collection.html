@@ -26,8 +26,8 @@
     {% for item in items %}
       {% assign extension = item.relative_path | split: '.' | last %}
       {% if extension == 'html' %}
-        <div class="preview" id="{{ item.relative_path | split: '/' | last | split: '.' | first }}"
-          {% if item.date == '999' %} class="intro" {% endif %}>
+        <div class="preview {% if item.date == '999' %} intro {% endif %}"
+             id="{{ item.relative_path | split: '/' | last | split: '.' | first }}">
           <div class="heading">
             <span class="title"> {{ item.title }} </span>
             <span class="subtitle"> {{ item.subtitle }} </span>
