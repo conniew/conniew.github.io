@@ -22,7 +22,7 @@
 
   <div id="content">
 
-    {% assign items = site[page.path] | sort: 'date' reversed %}
+    {% assign items = site[page.path] | sort:"date" | reverse %}
     {% for item in items %}
       {% assign extension = item.relative_path | split: '.' | last %}
       {% if extension == 'html' %}
