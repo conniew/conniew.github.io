@@ -389,7 +389,7 @@ body {
   content: "";
 
   position: relative;
-  left: 19px;
+  left: calc(50% - 6px);
   width: 20px;
   height: 20px;
   display: block;
@@ -413,7 +413,7 @@ body {
   content: "";
 
   position: relative;
-  right: -8px;
+  left: calc(50% - 16px);
   width: 20px;
   height: 20px;
   display: block;
@@ -437,7 +437,7 @@ body {
   content: "";
 
   position: relative;
-  left: 23px;
+  left: calc(50% - 1px);
   top: 1px;
   width: 0;
   height: 20px;
@@ -450,7 +450,7 @@ body {
   content: "";
 
   position: relative;
-  left: 14px;
+  left: calc(50% - 10px);
   top: -9px;
   width: 20px;
   height: 0;
@@ -469,7 +469,7 @@ body {
   content: "";
 
   position: relative;
-  left: 14px;
+  left: calc(50% - 10px);
   top: 1px;
   width: 20px;
   height: 0;
