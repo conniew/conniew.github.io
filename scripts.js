@@ -74,6 +74,7 @@ var words = [
   'cypress',
   'deuteron',
   'devolve',
+  'dichotomy',
   'echelon',
   'embroidery',
   'enigma',
@@ -90,6 +91,7 @@ var words = [
   'haploid',
   'inter',
   'interim',
+  'irk',
   'kayak',
   'kumquat',
   'lyse',
@@ -106,6 +108,7 @@ var words = [
   'progeny',
   'pyre',
   'quaver',
+  'quay',
   'rheumatism',
   'schism',
   'seizure',
@@ -118,7 +121,8 @@ var words = [
   'torrid',
   'utopia',
   'vie',
-  'witticism'
+  'witticism',
+  'wry'
 ];
 
 function getWord() {
