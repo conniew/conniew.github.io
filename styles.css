@@ -20,9 +20,9 @@
   bottom: 0;
   height: 30px;
 
-  background-color: #C0C0C0;
+  background-color: #E0E0E0;
 
-  border-top: 2px solid #666666;
+  border-top: 1px solid #AAAAAA;
 
   z-index: 2;
 }
@@ -39,7 +39,7 @@
   color: #000000;
   text-decoration: none;
   text-align: center;
-  font-size: 16px;
+  font-size: 15px;
   line-height: 25px;
   font-weight: 600;
   text-transform: capitalize;
@@ -51,7 +51,7 @@
 }
 
 #footer a:not(.active):hover {
-  background-color: #666666;
+  background-color: #C9C9C9;
 }
 
 /* Footer word of the moment */
@@ -99,7 +99,7 @@
   text-decoration: none;
   font-size: 16px;
   line-height: 25px;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
 }
 
 /* Default HTML */
@@ -111,7 +111,7 @@ h1, h2 {
 }
 
 body {
-  background-color: #A9A9A9;
+  background-color: #C9C9C9;
 
   margin: 0;
   overflow: hidden;
@@ -137,8 +137,8 @@ body {
 
   background-color: #FFFFFF;
 
-  border-left: 1px solid #666666;
-  border-right: 1px solid #666666;
+  border-left: 1px solid #555555;
+  border-right: 1px solid #5555555;
 
   text-align: center;
   font-size: 20px;
@@ -150,7 +150,7 @@ body {
   right: 0;
   top: 40%;
 
-  color: #666666;
+  color: #555555;
 }
 
 .portal:hover .heading {
@@ -180,10 +180,9 @@ body {
   margin: 0 100px;
   overflow: hidden;
 
-  border-top: 1px solid #666666;
-  border-bottom: 1px solid #666666;
-  border-left: 2px solid #666666;
-  border-right: 2px solid #666666;
+  border-top: 1px solid #AAAAAA;
+  border-left: 1px solid #AAAAAA;
+  border-right: 1px solid #AAAAAA;
 
   background: -webkit-linear-gradient(#FFF0F5, #FFF0F5 50px, #FFFFFF 75px);
   background: -o-linear-gradient(#FFF0F5, #FFF0F5 50px, #FFFFFF 75px);
@@ -195,12 +194,8 @@ body {
   transition: height 0.3s ease 0s, border-width 0.3s ease 0s;
 }
 
-.preview:first-child {
-  border-top: 2px solid #666666;
-}
-
 .preview:last-child {
-  border-bottom: 2px solid #666666;
+  border-bottom: 1px solid #AAAAAA;
 }
 
 .preview.active {
@@ -221,7 +216,7 @@ body {
   padding: 10px 30px 10px 20px;
 
   /* Subtitle font (for ellipsis) */
-  color: #A9A9A9;
+  color: #888888;
   font-size: 14px;
   line-height: 18px;
 
@@ -237,17 +232,16 @@ body {
 
 .preview.active .heading {
   white-space: normal;
-  color: #666666;
+  color: #555555;
 }
 
 /* Title font */
 .preview .title {
   margin-right: 10px;
 
-  color: #666666;
-  font-size: 24px;
+  color: #555555;
+  font-size: 20px;
   line-height: 29px;
-  font-weight: 500;
 }
 
 .preview.active .title {
@@ -257,7 +251,7 @@ body {
 
 /* Hover state */
 .preview .heading:hover {
-  color: #666666;
+  color: #555555;
 
   cursor: pointer;
 }
@@ -288,14 +282,14 @@ body {
 }
 
 .preview .heading:hover:after {
-  border-right: 2px solid #666666;
-  border-bottom: 2px solid #666666;
+  border-right: 2px solid #555555;
+  border-bottom: 2px solid #555555;
 }
 
 .preview.active .heading:after {
   top: 20px;
-  border-right: 2px solid #666666;
-  border-bottom: 2px solid #666666;
+  border-right: 2px solid #555555;
+  border-bottom: 2px solid #555555;
 
   -ms-transform: rotate(-135deg);
   -webkit-transform: rotate(-135deg);
@@ -341,9 +335,9 @@ body {
   width: 100%;
 
   background-color: #E0E0E0;
-  border-top: 1px solid #666666;
+  border-top: 1px solid #CCCCCC;
 
-  font-size: 12px;
+  font-size: 11px;
 }
 
 /* End preview panels */
@@ -364,11 +358,11 @@ body {
   padding: 0;
   outline: 0;
 
-  border: 2px solid #666666;
+  border: 1px solid #555555;
   border-radius: 50%;
-  background-color: #C0C0C0;
+  background-color: #E0E0E0;
 
-  color: #666666;
+  color: #555555;
 
   cursor: pointer;
 
@@ -395,13 +389,13 @@ body {
   content: "";
 
   position: relative;
-  left: 16px;
+  left: calc(50% - 6px);
   width: 20px;
   height: 20px;
   display: block;
 
-  border-top: 2px solid #666666;
-  border-left: 2px solid #666666;
+  border-top: 2px solid #555555;
+  border-left: 2px solid #555555;
   border-radius: 2px;
 
   -ms-transform: scaleY(0.7) rotate(-45deg);
@@ -419,13 +413,13 @@ body {
   content: "";
 
   position: relative;
-  right: -5px;
+  left: calc(50% - 16px);
   width: 20px;
   height: 20px;
   display: block;
 
-  border-top: 2px solid #666666;
-  border-right: 2px solid #666666;
+  border-top: 2px solid #555555;
+  border-right: 2px solid #555555;
   border-radius: 2px;
 
   -ms-transform: scaleY(0.7) rotate(45deg);
@@ -443,26 +437,26 @@ body {
   content: "";
 
   position: relative;
-  left: 20px;
-  top: 2px;
+  left: calc(50% - 1px);
+  top: 1px;
   width: 0;
   height: 20px;
   display: block;
 
-  border-left: 2px solid #666666;
+  border-left: 2px solid #555555;
 }
 
 .control.expand:after {
   content: "";
 
   position: relative;
-  left: 11px;
+  left: calc(50% - 10px);
   top: -9px;
   width: 20px;
   height: 0;
   display: block;
 
-  border-top: 2px solid #666666;
+  border-top: 2px solid #555555;
 }
 
 /* Collapse all */
@@ -475,13 +469,13 @@ body {
   content: "";
 
   position: relative;
-  left: 11px;
+  left: calc(50% - 10px);
   top: 1px;
   width: 20px;
   height: 0;
   display: block;
 
-  border-top: 2px solid #666666;
+  border-top: 2px solid #555555;
 }
 
 /* End control buttons */
