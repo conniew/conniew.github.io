@@ -195,8 +195,12 @@ body {
   transition: height 0.3s ease 0s, border-width 0.3s ease 0s;
 }
 
+.preview:first-child {
+  margin-top: 0;
+}
+
 .preview:last-child {
-  border-bottom: 1px solid #AAAAAA;
+  margin-bottom: 0;
 }
 
 .preview.active {
