@@ -137,8 +137,8 @@ body {
 
   background-color: #FFFFFF;
 
-  border-left: 1px solid #555555;
-  border-right: 1px solid #5555555;
+  border-left: 1px solid #444444;
+  border-right: 1px solid #444444;
 
   text-align: center;
   font-size: 20px;
@@ -150,7 +150,7 @@ body {
   right: 0;
   top: 40%;
 
-  color: #555555;
+  color: #444444;
 }
 
 .portal:hover .heading {
@@ -177,12 +177,13 @@ body {
   position: relative;
   height: 50px;
 
-  margin: 0 100px;
+  margin: 5px 100px;
   overflow: hidden;
 
   border-top: 1px solid #AAAAAA;
-  border-left: 1px solid #AAAAAA;
   border-right: 1px solid #AAAAAA;
+  border-bottom: 1px solid #AAAAAA;
+  border-left: 1px solid #AAAAAA;
 
   background: -webkit-linear-gradient(#FFF0F5, #FFF0F5 50px, #FFFFFF 75px);
   background: -o-linear-gradient(#FFF0F5, #FFF0F5 50px, #FFFFFF 75px);
@@ -216,7 +217,7 @@ body {
   padding: 10px 30px 10px 20px;
 
   /* Subtitle font (for ellipsis) */
-  color: #888888;
+  color: #777777;
   font-size: 14px;
   line-height: 18px;
 
@@ -232,14 +233,14 @@ body {
 
 .preview.active .heading {
   white-space: normal;
-  color: #555555;
+  color: #444444;
 }
 
 /* Title font */
 .preview .title {
   margin-right: 10px;
 
-  color: #555555;
+  color: #444444;
   font-size: 20px;
   line-height: 29px;
 }
@@ -251,7 +252,7 @@ body {
 
 /* Hover state */
 .preview .heading:hover {
-  color: #555555;
+  color: #444444;
 
   cursor: pointer;
 }
@@ -282,14 +283,14 @@ body {
 }
 
 .preview .heading:hover:after {
-  border-right: 2px solid #555555;
-  border-bottom: 2px solid #555555;
+  border-right: 2px solid #444444;
+  border-bottom: 2px solid #444444;
 }
 
 .preview.active .heading:after {
   top: 20px;
-  border-right: 2px solid #555555;
-  border-bottom: 2px solid #555555;
+  border-right: 2px solid #444444;
+  border-bottom: 2px solid #444444;
 
   -ms-transform: rotate(-135deg);
   -webkit-transform: rotate(-135deg);
@@ -358,11 +359,11 @@ body {
   padding: 0;
   outline: 0;
 
-  border: 1px solid #555555;
+  border: 1px solid #444444;
   border-radius: 50%;
   background-color: #E0E0E0;
 
-  color: #555555;
+  color: #444444;
 
   cursor: pointer;
 
@@ -394,8 +395,8 @@ body {
   height: 20px;
   display: block;
 
-  border-top: 2px solid #555555;
-  border-left: 2px solid #555555;
+  border-top: 2px solid #444444;
+  border-left: 2px solid #444444;
   border-radius: 2px;
 
   -ms-transform: scaleY(0.7) rotate(-45deg);
@@ -418,8 +419,8 @@ body {
   height: 20px;
   display: block;
 
-  border-top: 2px solid #555555;
-  border-right: 2px solid #555555;
+  border-top: 2px solid #444444;
+  border-right: 2px solid #444444;
   border-radius: 2px;
 
   -ms-transform: scaleY(0.7) rotate(45deg);
@@ -443,7 +444,7 @@ body {
   height: 20px;
   display: block;
 
-  border-left: 2px solid #555555;
+  border-left: 2px solid #444444;
 }
 
 .control.expand:after {
@@ -456,7 +457,7 @@ body {
   height: 0;
   display: block;
 
-  border-top: 2px solid #555555;
+  border-top: 2px solid #444444;
 }
 
 /* Collapse all */
@@ -475,7 +476,7 @@ body {
   height: 0;
   display: block;
 
-  border-top: 2px solid #555555;
+  border-top: 2px solid #444444;
 }
 
 /* End control buttons */
