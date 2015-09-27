@@ -19,7 +19,15 @@
         <div class="content">
           {{ content }}
         </div>
-        <div class="permalink">Copyright &#169; Connie Wan 2015</div>
+        <div class="footer">
+          Copyright &#169; Connie Wan 2015
+
+          {% if page.date != '9999-99-99' %}
+            <div class="date">
+              Last updated: {{ page.date | date: '%B %d, %Y' }}
+            </div>
+          {% endif %}
+        </div>
       </div>
     </div>
 

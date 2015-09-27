@@ -325,14 +325,14 @@ body {
   left: 0;
   right: 0;
   top: 0;
-  bottom: 25px; /* permalink */
+  bottom: 25px; /* footer */
   padding: 0 20px;
 
   overflow-y: scroll;
   overflow-x: hidden;
 }
 
-.preview .body .permalink {
+.preview .body .footer {
   position: absolute;
   bottom: 0;
   padding: 5px 10px;
@@ -343,6 +343,11 @@ body {
   border-top: 1px solid #CCCCCC;
 
   font-size: 11px;
+}
+
+.preview .body .footer .date {
+  float: right;
+  text-align: right;
 }
 
 /* End preview panels */

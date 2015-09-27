@@ -37,8 +37,15 @@
               {{ item.content }}
               <br><br><br>
             </div>
-            <div class="permalink">Permalink:
+            <div class="footer">
+              Permalink:
               <a href="{{ item.url }}">http://con.ilogues.com{{ item.url }}</a>
+
+              {% if item.date != '9999-99-99' %}
+                <div class="date">
+                  Last updated: {{ item.date | date: '%B %d, %Y' }}
+                </div>
+              {% endif %}
             </div>
           </div>
         </div>
