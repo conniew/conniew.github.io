@@ -76,7 +76,8 @@ a {
 }
 
 #footer a:not(.active):hover {
-  background-color: #C9C9C9;
+  background-color: #C8C8C8;
+  color: #000000;
 }
 
 /* Footer word of the moment */
