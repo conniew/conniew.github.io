@@ -31,7 +31,7 @@ a {
   left: 0;
   right: 0;
   top: 0;
-  bottom: 30px; /* footer */
+  bottom: 50px; /* page footer */
 
   overflow-y: scroll;
   overflow-x: hidden;
@@ -43,7 +43,7 @@ a {
   left: 0;
   right: 0;
   bottom: 0;
-  height: 30px;
+  height: 50px;
 
   background-color: #E8E8E8;
 
@@ -65,7 +65,7 @@ a {
   text-decoration: none;
   text-align: center;
   font-size: 15px;
-  line-height: 25px;
+  line-height: 30px;
   font-weight: 600;
   text-transform: capitalize;
 }
@@ -90,7 +90,7 @@ a {
   color: #8B0000;
   text-decoration: none;
   font-size: 16px;
-  line-height: 25px;
+  line-height: 30px;
 }
 
 #footer #word a {
@@ -124,7 +124,7 @@ a {
   color: #000000;
   text-decoration: none;
   font-size: 16px;
-  line-height: 25px;
+  line-height: 30px;
   letter-spacing: 1px;
 }
 
@@ -186,6 +186,7 @@ a {
   overflow: hidden;
 
   border: 1px solid #444444;
+  border-radius: 2px;
 
   background: -webkit-linear-gradient(#E8E8E8, #E8E8E8 50px, #FFFFFF 100px);
   background: -o-linear-gradient(#E8E8E8, #E8E8E8 50px, #FFFFFF 100px);
