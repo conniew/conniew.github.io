@@ -26,7 +26,7 @@
     {% for item in items %}
       {% assign extension = item.relative_path | split: '.' | last %}
       {% if extension == 'html' %}
-        <div class="preview {% if item.date == '9999-99-99' %} intro {% endif %}"
+        <div class="preview {% if item.date == '0000-00-00' %} intro {% endif %}"
              id="{{ item.relative_path | split: '/' | last | split: '.' | first }}">
           <div class="heading">
             <span class="title"> {{ item.title }} </span>
@@ -41,7 +41,7 @@
               Permalink:
               <a href="{{ item.url }}">http://con.ilogues.com{{ item.url }}</a>
 
-              {% if item.date != '9999-99-99' %}
+              {% if item.date != '0000-00-00' %}
                 <div class="date">
                   Last updated: {{ item.date | date: '%B %d, %Y' }}
                 </div>
