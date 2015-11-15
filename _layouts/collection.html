@@ -41,7 +41,7 @@
               Permalink:
               <a href="{{ item.url }}">http://con.ilogues.com{{ item.url }}</a>
 
-              {% if item.date != '0000-00-00' %}
+              {% if item.date != '0000-00-00' and item.date != '9999-99-99' %}
                 <div class="date">
                   Last updated: {{ item.date | date: '%B %d, %Y' }}
                 </div>
