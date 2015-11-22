@@ -491,3 +491,18 @@ a {
 }
 
 /* End control buttons */
+
+/* Image container */
+.image {
+  width: 100%;
+
+  text-align: center;
+  font-size: 10px;
+
+  margin: 20px 0;
+}
+
+.image:after {
+  display: block;
+  content: "Click for full view."
+}
