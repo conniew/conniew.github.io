@@ -45,9 +45,9 @@ a {
   bottom: 0;
   height: 50px;
 
-  background-color: #E8E8E8;
+  background-color: #FFFFFF;
 
-  border-top: 1px solid #444444;
+  box-shadow: 0px -2px 10px #AAAAAA;
 
   z-index: 2;
 }
@@ -64,9 +64,8 @@ a {
   color: #444444;
   text-decoration: none;
   text-align: center;
-  font-size: 15px;
-  line-height: 30px;
-  font-weight: 600;
+  font-size: 18px;
+  line-height: 36px;
   text-transform: capitalize;
 }
 
@@ -76,7 +75,7 @@ a {
 }
 
 #footer a:not(.active):hover {
-  background-color: #C8C8C8;
+  background-color: #AAAAAA;
   color: #000000;
 }
 
@@ -141,18 +140,25 @@ a {
 
   background-color: #FFFFFF;
 
-  border-left: 1px solid #444444;
-  border-right: 1px solid #444444;
-
   text-align: center;
   font-size: 20px;
+}
+
+.portal:after {
+  content:''; 
+  width: 1px; 
+  height: 90%; 
+  background: #AAAAAA; 
+  position: absolute; 
+  top: 5%;
+  right: 0;
 }
 
 .portal .heading {
   position: relative;
   left: 0;
   right: 0;
-  top: 40%;
+  top: 45%;
 
   color: #444444;
 }
