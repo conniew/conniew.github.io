@@ -361,11 +361,11 @@ a {
   padding: 0;
   outline: 0;
 
-  border: 1px solid #444444;
+  border: 1px solid #AAAAAA;
   border-radius: 50%;
-  background-color: #E8E8E8;
+  background-color: #FFFFFF;
 
-  color: #444444;
+  color: #AAAAAA;
 
   cursor: pointer;
 
@@ -378,6 +378,8 @@ a {
 
 .control:disabled {
   opacity: 0.5;
+
+  background-color: #EEEEEE;
 
   cursor: default;
 }
@@ -397,8 +399,8 @@ a {
   height: 20px;
   display: block;
 
-  border-top: 2px solid #444444;
-  border-left: 2px solid #444444;
+  border-top: 2px solid #AAAAAA;
+  border-left: 2px solid #AAAAAA;
   border-radius: 2px;
 
   -ms-transform: scaleY(0.7) rotate(-45deg);
@@ -421,8 +423,8 @@ a {
   height: 20px;
   display: block;
 
-  border-top: 2px solid #444444;
-  border-right: 2px solid #444444;
+  border-top: 2px solid #AAAAAA;
+  border-right: 2px solid #AAAAAA;
   border-radius: 2px;
 
   -ms-transform: scaleY(0.7) rotate(45deg);
@@ -446,7 +448,7 @@ a {
   height: 20px;
   display: block;
 
-  border-left: 2px solid #444444;
+  border-left: 2px solid #AAAAAA;
 }
 
 .control.expand:after {
@@ -459,7 +461,7 @@ a {
   height: 0;
   display: block;
 
-  border-top: 2px solid #444444;
+  border-top: 2px solid #AAAAAA;
 }
 
 /* Collapse all */
@@ -478,7 +480,7 @@ a {
   height: 0;
   display: block;
 
-  border-top: 2px solid #444444;
+  border-top: 2px solid #AAAAAA;
 }
 
 /* End control buttons */
