@@ -75,7 +75,7 @@ a {
 }
 
 #footer a:not(.active):hover {
-  background-color: #AAAAAA;
+  background-color: #EEEEEE;
   color: #000000;
 }
 
