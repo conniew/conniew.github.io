@@ -9,7 +9,7 @@ h1, h2 {
 }
 
 body {
-  background-color: #C8C8C8;
+  background-color: #FFFFFF;
 
   margin: 0;
   overflow: hidden;
@@ -145,13 +145,16 @@ a {
 }
 
 .portal:after {
-  content:''; 
-  width: 1px; 
-  height: 90%; 
-  background: #AAAAAA; 
-  position: absolute; 
+  content:'';
+
+  position: absolute;
   top: 5%;
   right: 0;
+
+  width: 1px;
+  height: 90%;
+
+  background: #AAAAAA;
 }
 
 .portal .heading {
@@ -187,39 +190,20 @@ a {
   position: relative;
   height: 50px;
 
-  margin: 5px 100px;
+  margin: 0 100px;
   overflow: hidden;
 
-  border: 1px solid #444444;
-  border-radius: 2px;
+  border-bottom: 1px solid #AAAAAA;
 
-  background: -webkit-linear-gradient(#E8E8E8, #E8E8E8 50px, #FFFFFF 100px);
-  background: -o-linear-gradient(#E8E8E8, #E8E8E8 50px, #FFFFFF 100px);
-  background: -moz-linear-gradient(#E8E8E8, #E8E8E8 50px, #FFFFFF 100px);
-  background: linear-gradient(#E8E8E8, #E8E8E8 50px, #FFFFFF 100px);
+  background-color: #FFFFFF;
 
   font-family: Times;
 
   transition: height 0.3s ease 0s, border-width 0.3s ease 0s;
 }
 
-.preview:first-child {
-  margin-top: 0;
-}
-
-.preview:last-child {
-  margin-bottom: 0;
-}
-
 .preview.active {
   height: 100%;
-}
-
-.preview.intro {
-  background: -webkit-linear-gradient(#C8C8C8, #C8C8C8 50px, #FFFFFF 100px);
-  background: -o-linear-gradient(#C8C8C8, #C8C8C8 50px, #FFFFFF 100px);
-  background: -moz-linear-gradient(#C8C8C8, #C8C8C8 50px, #FFFFFF 100px);
-  background: linear-gradient(#C8C8C8, #C8C8C8 50px, #FFFFFF 100px);
 }
 
 /* Heading container */
@@ -295,14 +279,14 @@ a {
 }
 
 .preview .heading:hover:after {
-  border-right: 2px solid #444444;
-  border-bottom: 2px solid #444444;
+  border-right: 2px solid #AAAAAA;
+  border-bottom: 2px solid #AAAAAA;
 }
 
 .preview.active .heading:after {
   top: 20px;
-  border-right: 2px solid #444444;
-  border-bottom: 2px solid #444444;
+  border-right: 2px solid #AAAAAA;
+  border-bottom: 2px solid #AAAAAA;
 
   -ms-transform: rotate(-135deg);
   -webkit-transform: rotate(-135deg);
@@ -347,8 +331,9 @@ a {
   height: 25px;
   width: 100%;
 
-  background-color: #E8E8E8;
-  border-top: 1px solid #777777;
+  background-color: #FFFFFF;
+  
+  border-top: 1px solid #AAAAAA;
 
   font-size: 11px;
 }
