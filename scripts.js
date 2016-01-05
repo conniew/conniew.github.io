@@ -1,7 +1,4 @@
 function setControls() {
-  document.querySelector('#controls').style.width =
-      document.querySelector('#content').clientWidth + 'px';
-
   // TODO: update this based on page, probably requires page# metadata
   document.querySelector('.control.prev').disabled = true;
   document.querySelector('.control.next').disabled = true;
