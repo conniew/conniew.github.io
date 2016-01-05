@@ -468,6 +468,14 @@ a {
   background-color: #111111;
 }
 
+.control:not(:disabled):hover {
+  background-color: #F2F2F2;
+}
+
+.dark .control:not(:disabled):hover {
+  background-color: #303030;
+}
+
 .control::-moz-focus-inner {
   border: 0;
 }
@@ -621,8 +629,6 @@ a {
   border-radius: 50%;
 
   box-shadow: 6px 6px 0 #AAAAAA;
-
-  background-color: #FFFFFF;
 }
 
 /* Sun to switch to light theme */
