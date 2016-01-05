@@ -11,7 +11,7 @@ h1, h2 {
 }
 
 .dark h1, .dark h2 {
-  color: #EEEEEE;
+  color: #DDDDDD;
 }
 
 body {
@@ -24,7 +24,7 @@ body {
 
 body.dark {
   background-color: #222222;
-  color: #EEEEEE;
+  color: #DDDDDD;
 }
 
 a {
@@ -110,7 +110,7 @@ a {
 
 .dark #footer a:not(.active):hover {
   background-color: #303030;
-  color: #EEEEEE;
+  color: #DDDDDD;
 }
 
 /* Footer word of the moment */
@@ -216,7 +216,7 @@ a {
 }
 
 .dark .portal:hover .heading {
-  color: #EEEEEE;
+  color: #DDDDDD;
 }
 
 .portal a {
@@ -248,8 +248,8 @@ a {
   transition: height 0.3s ease 0s, border-width 0.3s ease 0s;
 }
 
-.preview {
-  border-bottom: 1px solid #555555;
+.dark .preview {
+  border-color: #555555;
 }
 
 .preview.active {
@@ -334,7 +334,7 @@ a {
 }
 
 .dark .preview .heading:hover .title {
-  color: #EEEEEE;
+  color: #DDDDDD;
 }
 
 /* Expand arrow */
@@ -473,7 +473,7 @@ a {
 .control:disabled {
   opacity: 0.5;
 
-  background-color: #EEEEEE;
+  background-color: #F2F2F2;
 
   cursor: default;
 }
