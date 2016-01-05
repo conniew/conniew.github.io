@@ -29,12 +29,12 @@ function toggleTheme() {
   if (document.body.classList.contains('dark')) {
     document.body.classList.remove('dark');
     document.querySelector('.control.theme').title = 'Dark Theme';
-    document.cookie = 'theme=light';
+    document.cookie = 'theme=light; path=/';
   }
   else {
     document.body.classList.add('dark');
     document.querySelector('.control.theme').title = 'Light Theme';
-    document.cookie = 'theme=dark';
+    document.cookie = 'theme=dark; path=/';
   }
 }
 
@@ -44,7 +44,7 @@ function setTheme() {
     document.querySelector('.control.theme').title = 'Light Theme';
   }
   else {
-    document.cookie = 'theme=light';
+    document.cookie = 'theme=light; path=/';
     if (document.cookie.indexOf('theme') < 0) { // cookies are disabled
       document.querySelector('.control.theme').disabled = true;
     }
