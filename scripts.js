@@ -39,14 +39,17 @@ function toggleTheme() {
 }
 
 function setTheme() {
+  var themeToggleBtn = document.querySelector('.control.theme');
+
   if (document.cookie.indexOf('theme=dark') >= 0) {
     document.body.classList.add('dark');
-    document.querySelector('.control.theme').title = 'Light Theme';
+    if (themeToggleBtn) themeToggleBtn.title = 'Light Theme';
   }
   else {
     document.cookie = 'theme=light; path=/';
     if (document.cookie.indexOf('theme') < 0) { // cookies are disabled
-      document.querySelector('.control.theme').disabled = true;
+      if (document.querySelector('.control.theme'))
+      if (themeToggleBtn) themeToggleBtn.disabled = true;
     }
   }
 }
