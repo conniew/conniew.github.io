@@ -14,10 +14,20 @@
   <script type="text/javascript" src="../scripts.js"></script>
 
   <div id="controls">
-    <button class="control prev"></button>
-    <button class="control next"></button>
-    <button class="control expand" onclick="expandAll()"></button>
-    <button class="control collapse" onclick="collapseAll()"></button>
+    <button class="control prev" title="Previous Page"></button>
+    <button class="control next" title="Next Page"></button>
+    <button class="control expand" title="Expand All" onclick="expandAll()"></button>
+    <button class="control collapse" title="Collapse All" onclick="collapseAll()"></button>
+    <button class="control theme" title="Dark Theme" onclick="toggleTheme()">
+      <div class="ray"></div>
+      <div class="ray"></div>
+      <div class="ray"></div>
+      <div class="ray"></div>
+      <div class="ray"></div>
+      <div class="ray"></div>
+      <div class="ray"></div>
+      <div class="ray"></div>
+    </button>
   </div>
 
   <div id="content">

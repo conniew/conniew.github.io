@@ -25,6 +25,32 @@ function collapseAll() {
   }
 }
 
+function toggleTheme() {
+  if (document.body.classList.contains('dark')) {
+    document.body.classList.remove('dark');
+    document.querySelector('.control.theme').title = 'Dark Theme';
+    document.cookie = 'theme=light';
+  }
+  else {
+    document.body.classList.add('dark');
+    document.querySelector('.control.theme').title = 'Light Theme';
+    document.cookie = 'theme=dark';
+  }
+}
+
+function setTheme() {
+  if (document.cookie.indexOf('theme=dark') >= 0) {
+    document.body.classList.add('dark');
+    document.querySelector('.control.theme').title = 'Light Theme';
+  }
+  else {
+    document.cookie = 'theme=light';
+    if (document.cookie.indexOf('theme') < 0) { // cookies are disabled
+      document.querySelector('.control.theme').disabled = true;
+    }
+  }
+}
+
 function smoothScroll(container, y1, y2, t) {
   if (t > 20) return;
   container.scrollTop = y1 + t*(y2 - y1)/20;
@@ -141,6 +167,7 @@ function updateWord() {
 }
 
 function loadCollectionPage() {
+  setTheme();
   rigPreviews();
   setControls();
   updateControls();
