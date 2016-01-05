@@ -284,10 +284,12 @@ a {
 .preview.active .heading {
   white-space: normal;
   color: #444444;
+  border-bottom: 1px solid #DEDEDE;
 }
 
 .dark .preview.active .heading {
   color: #CCCCCC;
+  border-color: #343434;
 }
 
 /* Title font */
@@ -418,13 +420,13 @@ a {
   height: 25px;
   width: 100%;
   
-  border-top: 1px solid #AAAAAA;
+  border-top: 1px solid #DEDEDE;
 
   font-size: 11px;
 }
 
 .dark .preview .body .footer {
-  border-color: #55555;
+  border-color: #343434;
 }
 
 .preview .body .footer .date {
