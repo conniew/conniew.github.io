@@ -79,7 +79,7 @@ a {
 }
 
 #footer a:not(.active):hover {
-  background-color: #EEEEEE;
+  background-color: #F2F2F2;
   color: #000000;
 }
 
@@ -247,6 +247,10 @@ a {
 }
 
 /* Hover state */
+.preview:not(.active) .heading:hover {
+  background-color: #F2F2F2;
+}
+
 .preview .heading:hover {
   color: #444444;
 
