@@ -174,5 +174,6 @@ function loadCollectionPage() {
 }
 
 function loadOverviewPage() {
+  setTheme();
   updateWord();
 }
