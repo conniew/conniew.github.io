@@ -49,7 +49,10 @@ function setTheme() {
     document.cookie = 'theme=light; path=/';
     if (document.cookie.indexOf('theme') < 0) { // cookies are disabled
       if (document.querySelector('.control.theme'))
-      if (themeToggleBtn) themeToggleBtn.disabled = true;
+      if (themeToggleBtn) {
+        themeToggleBtn.disabled = true;
+        themeToggleBtn.title = "Enable cookies to change theme"
+      }
     }
   }
 }
