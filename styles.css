@@ -103,12 +103,14 @@ a {
   color: #8BBBBB;
 }
 
-#footer a:not(.active):hover {
+#footer a:not(.active):hover,
+#footer a:not(.active):focus {
   background-color: #F2F2F2;
   color: #000000;
 }
 
-.dark #footer a:not(.active):hover {
+.dark #footer a:not(.active):hover,
+.dark #footer a:not(.active):focus {
   background-color: #303030;
   color: #DDDDDD;
 }
@@ -310,12 +312,14 @@ a {
   margin-bottom: 10px;
 }
 
-/* Hover state */
-.preview:not(.active) .heading:hover {
+/* Hover/focus state */
+.preview:not(.active) .heading:hover,
+.preview:not(.active) .heading:focus {
   background-color: #F2F2F2;
 }
 
-.dark .preview:not(.active) .heading:hover {
+.dark .preview:not(.active) .heading:hover,
+.dark .preview:not(.active) .heading:focus {
   background-color: #303030;
 }
 
@@ -401,6 +405,10 @@ a {
   overflow: hidden;
 }
 
+.preview:not(.active) .body {
+  visibility: hidden;
+}
+
 .preview .body .content {
   position: absolute;
   left: 0;
@@ -468,11 +476,13 @@ a {
   background-color: #111111;
 }
 
-.control:not(:disabled):hover {
+.control:not(:disabled):hover,
+.control:not(:disabled):focus {
   background-color: #F2F2F2;
 }
 
-.dark .control:not(:disabled):hover {
+.dark .control:not(:disabled):hover,
+.dark .control:not(:disabled):focus {
   background-color: #303030;
 }
 

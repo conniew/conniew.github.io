@@ -38,7 +38,7 @@
       {% if extension == 'html' %}
         <div class="preview {% if item.date == '0000-00-00' %} intro {% endif %}"
              id="{{ item.relative_path | split: '/' | last | split: '.' | first }}">
-          <div class="heading">
+          <div class="heading" tabindex="0">
             <span class="title"> {{ item.title }} </span>
             <span class="subtitle"><i> {{ item.subtitle }} </i></span>
           </div>
@@ -68,10 +68,10 @@
     <a href="../">home</a>
     {% for collection in site.collections %}
       {% capture collectionName %}{{ collection | first }}{% endcapture %}
-        <a href="../{{ collectionName }}"
+      <a {% if collectionName != page.path %} href="../{{ collectionName }} {% endif %}"
                 {% if collectionName == page.path %} class="active" {% endif %}>
         {{collectionName}}
-        </a>
+      </a>
     {% endfor %}
   </div>
 </body>

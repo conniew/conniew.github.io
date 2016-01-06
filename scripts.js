@@ -87,6 +87,10 @@ function rigPreviews() {
   var headings = document.querySelectorAll('.preview .heading');
   for (var i = 0; i < headings.length; i++) {
     headings[i].onclick = function(event) { togglePreview(event.target.parentNode, true); };
+    headings[i].onkeypress = function(event) {
+      if (event.keyCode == 13) // ENTER was pressed
+        togglePreview(event.target.parentNode, true);
+    };
   }
 }
 
