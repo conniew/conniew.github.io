@@ -84,15 +84,69 @@ function togglePreview(preview, scroll) {
 }
 
 function rigPreviews() {
-  var headings = document.querySelectorAll('.preview .heading');
-  for (var i = 0; i < headings.length; i++) {
-    headings[i].onclick = function(event) { togglePreview(event.target.parentNode, true); };
-    headings[i].onkeypress = function(event) {
+  var previews = document.querySelectorAll('.preview');
+
+  for (var i = 0; i < previews.length; i++) {
+    // Preview: Allow ENTER on focus to expand/collapse
+    previews[i].onkeydown = function(event) {
       if (event.keyCode == 13) // ENTER was pressed
-        togglePreview(event.target.parentNode, true);
+        togglePreview(event.target, true);
+    };
+
+    // Heading: Allow click in heading to expand/collapse
+    previews[i].firstElementChild.onclick =
+      function(event) { togglePreview(event.target.parentNode, true); };
+
+    // Content: Allow scrolling within content
+    previews[i].querySelector('.content').onkeydown = function(event) {
+      if (event.keyCode == 38 || event.keyCode == 40) // UP or DOWN was pressed
+        event.stopPropagation();
     };
   }
 }
+
+function highlightNextPreview(reverse) {
+  var next = null;
+
+  if (document.activeElement.classList.contains('preview')) {
+    var curr = document.activeElement;
+
+    if (!reverse) next = curr.nextElementSibling;
+    else          next = curr.previousElementSibling;
+  }
+
+  if (!next) {
+    var previewContainer = document.body.querySelector('#content');
+
+    if (!reverse) next = previewContainer.firstElementChild;
+    else          next = previewContainer.lastElementChild;
+  }
+
+  next.focus();
+};
+
+function handleKeyboardShortcut(event) {
+  if (event.keyCode == 38) {  // UP
+    event.preventDefault();  // Prevent scrolling of the page
+    highlightNextPreview(true);
+  }
+  if (event.keyCode == 40) {  // DOWN
+    event.preventDefault();  // Prevent scrolling of the page
+    highlightNextPreview();
+  }
+  if (event.keyCode == 188) {  // COMMA (left angle bracket)
+    // TODO: Make this go to the previous page.
+  }
+  if (event.keyCode == 190) {  // PERIOD (right angle bracket)
+    // TODO: Make this go to the next page.
+  }
+  if (event.keyCode == 173 || event.keyCode == 189) {  // DASH (minus)
+    collapseAll();
+  }
+  if (event.keyCode == 61 || event.keyCode == 187) {  // EQUALS (plus)
+    expandAll();
+  }
+};
 
 var words = [
   'aftermath',
@@ -181,6 +235,8 @@ function loadCollectionPage() {
   rigPreviews();
   setControls();
   updateControls();
+
+  document.body.onkeydown = function(event) { handleKeyboardShortcut(event); };
 }
 
 function loadOverviewPage() {

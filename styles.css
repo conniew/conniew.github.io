@@ -313,13 +313,13 @@ a {
 }
 
 /* Hover/focus state */
-.preview:not(.active) .heading:hover,
-.preview:not(.active) .heading:focus {
+.preview:not(.active):hover,
+.preview:not(.active):focus {
   background-color: #F2F2F2;
 }
 
-.dark .preview:not(.active) .heading:hover,
-.dark .preview:not(.active) .heading:focus {
+.dark .preview:not(.active):hover,
+.dark .preview:not(.active):focus {
   background-color: #303030;
 }
 
