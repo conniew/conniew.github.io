@@ -87,10 +87,12 @@ function rigPreviews() {
   var previews = document.querySelectorAll('.preview');
 
   for (var i = 0; i < previews.length; i++) {
-    // Preview: Allow ENTER on focus to expand/collapse
+    // Preview: Allow ENTER on focus to expand/collapse, ESC to collapse
     previews[i].onkeydown = function(event) {
       if (event.keyCode == 13) // ENTER was pressed
         togglePreview(event.target, true);
+      else if (event.target.classList.contains('active') && event.keyCode == 27) // ESC was pressed
+        togglePreview(event.target);
     };
 
     // Heading: Allow click in heading to expand/collapse
@@ -130,20 +132,20 @@ function handleKeyboardShortcut(event) {
     event.preventDefault();  // Prevent scrolling of the page
     highlightNextPreview(true);
   }
-  if (event.keyCode == 40) {  // DOWN
+  else if (event.keyCode == 40) {  // DOWN
     event.preventDefault();  // Prevent scrolling of the page
     highlightNextPreview();
   }
-  if (event.keyCode == 188) {  // COMMA (left angle bracket)
+  else if (event.keyCode == 188) {  // COMMA (left angle bracket)
     // TODO: Make this go to the previous page.
   }
-  if (event.keyCode == 190) {  // PERIOD (right angle bracket)
+  else if (event.keyCode == 190) {  // PERIOD (right angle bracket)
     // TODO: Make this go to the next page.
   }
-  if (event.keyCode == 173 || event.keyCode == 189) {  // DASH (minus)
+  else if (event.keyCode == 173 || event.keyCode == 189) {  // DASH (minus)
     collapseAll();
   }
-  if (event.keyCode == 61 || event.keyCode == 187) {  // EQUALS (plus)
+  else if (event.keyCode == 61 || event.keyCode == 187) {  // EQUALS (plus)
     expandAll();
   }
 };
