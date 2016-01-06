@@ -1,17 +1,19 @@
 /* Begin global styles */
 
 /* Default HTML */
-h1, h2 {
-  margin: 0;
-  padding: 0;
-  font-weight: initial;
-  font-family: initial;
-  
-  color: #000000;
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-.dark h1, .dark h2 {
-  color: #DDDDDD;
+*:focus {
+  outline: none;
+}
+
+button::-moz-focus-inner,
+a::-moz-focus-inner {
+  border: 0;
 }
 
 body {
@@ -27,18 +29,31 @@ body.dark {
   color: #DDDDDD;
 }
 
+h1, h2 {
+  margin: 0;
+  padding: 0;
+  font-weight: initial;
+  font-family: initial;
+  
+  color: #000000;
+}
+
+.dark h1, .dark h2 {
+  color: #DDDDDD;
+}
+
 a {
   color: #8B0000;
+  text-decoration: none;
 }
 
 .dark a {
   color: #8BBBBB;
 }
 
-* {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+a:hover,
+a:focus {
+  text-decoration: underline;
 }
 
 /* Main content of all pages */
@@ -484,10 +499,6 @@ a {
 .dark .control:not(:disabled):hover,
 .dark .control:not(:disabled):focus {
   background-color: #303030;
-}
-
-.control::-moz-focus-inner {
-  border: 0;
 }
 
 .control:disabled {
