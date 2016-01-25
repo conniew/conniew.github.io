@@ -57,6 +57,17 @@ function setTheme() {
   }
 }
 
+function loadImages(container) {
+  var deferredImgs = container.getElementsByTagName('img');
+  for (var i = 0; i < deferredImgs.length; i++) {
+    var src = deferredImgs[i].getAttribute('data-src');
+    if (src) {
+      deferredImgs[i].setAttribute('src', src);
+      deferredImgs[i].setAttribute('data-src', '');
+    }
+  }
+}
+
 function smoothScroll(container, y1, y2, t) {
   if (t > 20) return;
   container.scrollTop = y1 + t*(y2 - y1)/20;
@@ -75,8 +86,10 @@ function scrollToElement(target) {
 }
 
 function togglePreview(preview, scroll) {
-  if (!preview.classList.contains('active') && scroll)
+  if (!preview.classList.contains('active') && scroll) {
     scrollToElement(preview);
+    loadImages(preview);
+  }
   preview.classList.toggle('active');
   preview.querySelector('.body').style.top =
     preview.querySelector('.heading').offsetHeight + 'px';
@@ -232,22 +245,11 @@ function updateWord() {
     wordContainer.innerHTML = getWord();
 }
 
-function loadImages() {
-  var deferredImgs = document.getElementsByTagName('img');
-  for (var i = 0; i < deferredImgs.length; i++) {
-    var src = deferredImgs[i].getAttribute('data-src');
-    if (src) {
-      deferredImgs[i].setAttribute('src', src);
-    }
-  }
-}
-
 function loadCollectionPage() {
   setTheme();
   rigPreviews();
   setControls();
   updateControls();
-  loadImages();
 
   document.body.onkeydown = function(event) { handleKeyboardShortcut(event); };
 }
