@@ -232,11 +232,22 @@ function updateWord() {
     wordContainer.innerHTML = getWord();
 }
 
+function loadImages() {
+  var deferredImgs = document.getElementsByTagName('img');
+  for (var i = 0; i < deferredImgs.length; i++) {
+    var src = deferredImgs[i].getAttribute('data-src');
+    if (src) {
+      deferredImgs[i].setAttribute('src', src);
+    }
+  }
+}
+
 function loadCollectionPage() {
   setTheme();
   rigPreviews();
   setControls();
   updateControls();
+  loadImages();
 
   document.body.onkeydown = function(event) { handleKeyboardShortcut(event); };
 }
