@@ -60,20 +60,21 @@ function setTheme() {
 function loadImages(container) {
   var deferredImgs = container.getElementsByTagName('img');
   for (var i = 0; i < deferredImgs.length; i++) {
-    var original = deferredImgs[i];
-    var src = original.getAttribute('data-src');
+    var src = deferredImgs[i].getAttribute('data-src');
 
     if (src) {
       var actual = document.createElement('img');
 
-      actual.onload = function() {
-        if (original.classList.contains('small'))
-          actual.width *= 0.3;
-        else
-          actual.width *= 0.5;
+      actual.onload = (function(original) {
+        return function() {
+          if (original.classList.contains('small'))
+            this.width *= 0.3;
+          else
+            this.width *= 0.5;
 
-        original.parentNode.replaceChild(actual, original);
-      }
+          original.parentNode.replaceChild(this, original);
+        }
+      })(deferredImgs[i]);
 
       actual.src = src;
     }
