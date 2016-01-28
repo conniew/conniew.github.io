@@ -72,7 +72,7 @@ function loadImages(container) {
         else
           actual.width *= 0.5;
 
-        original.parent.replaceChild(actual, original);
+        original.parentNode.replaceChild(actual, original);
       }
 
       actual.src = src;
