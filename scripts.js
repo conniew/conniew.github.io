@@ -60,10 +60,22 @@ function setTheme() {
 function loadImages(container) {
   var deferredImgs = container.getElementsByTagName('img');
   for (var i = 0; i < deferredImgs.length; i++) {
-    var src = deferredImgs[i].getAttribute('data-src');
+    var original = deferredImgs[i];
+    var src = original.getAttribute('data-src');
+
     if (src) {
-      deferredImgs[i].setAttribute('src', src);
-      deferredImgs[i].setAttribute('data-src', '');
+      var actual = document.createElement('img');
+
+      actual.onload = function() {
+        if (original.classList.contains('small'))
+          actual.width *= 0.3;
+        else
+          actual.width *= 0.5;
+
+        original.parent.replaceChild(actual, original);
+      }
+
+      actual.src = src;
     }
   }
 }
