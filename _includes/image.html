@@ -1,0 +1,18 @@
+<div class="image">
+  <!-- Display style, with one image -->
+  {% if include.url %}
+    <a href="{{ include.url }}">
+      <img src="deferred.png" data-src="{{ include.url }}" onload="width *= 0.5">
+    </a>
+  {% endif %}
+
+  <!-- Gallery style, with many images -->
+  {% if include.urls %}
+    {% assign urls = include.urls | split: ' ' %}
+    {% for url in urls %}
+      <a href="{{ url }}">
+        <img src="deferred.png" data-src="{{ url }}" onload="width *= 0.25">
+      </a>
+    {% endfor %}
+  {% endif %}
+</div>

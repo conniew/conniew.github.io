@@ -731,6 +731,10 @@ a:focus {
   margin: 20px 0;
 }
 
+.image img {
+  display: inline;
+}
+
 .image:after {
   display: block;
   content: "Click for full view."
