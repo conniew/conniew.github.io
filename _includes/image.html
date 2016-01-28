@@ -2,7 +2,7 @@
   <!-- Display style, with one image -->
   {% if include.url %}
     <a href="{{ include.url }}">
-      <img src="deferred.png" data-src="{{ include.url }}">
+      <img src="../deferred.png" data-src="{{ include.url }}">
     </a>
   {% endif %}
 
@@ -11,7 +11,7 @@
     {% assign urls = include.urls | split: ' ' %}
     {% for url in urls %}
       <a href="{{ url }}">
-        <img src="deferred.png" data-src="{{ url }}" class="small">
+        <img src="../deferred.png" data-src="{{ url }}" class="small">
       </a>
     {% endfor %}
   {% endif %}
