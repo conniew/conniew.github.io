@@ -65,10 +65,6 @@ function loadImages(container) {
       deferredImgs[i].setAttribute('src', src);
       deferredImgs[i].setAttribute('data-src', '');
     }
-    if (deferredImgs[i].classList.contains('small'))
-      deferredImgs[i].width *= 0.3;
-    else
-      deferredImgs[i].width *= 0.5;
   }
 }
 
