@@ -735,6 +735,10 @@ a:focus {
   display: inline;
 }
 
+.image a:hover {
+  text-decoration: none;
+}
+
 .image:after {
   display: block;
   content: "Click for full view."
