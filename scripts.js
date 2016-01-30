@@ -67,10 +67,7 @@ function loadImages(container) {
 
       actual.onload = (function(original) {
         return function() {
-          if (original.classList.contains('small'))
-            this.width *= 0.3;
-          else
-            this.width *= 0.5;
+          this.width *= 0.5;
 
           original.parentNode.replaceChild(this, original);
         }
