@@ -2,7 +2,6 @@
 ---
 
 #word_of_the_moment {
-
   #word {
     position: relative;
     width: 200px;
@@ -11,14 +10,11 @@
     font-size: 12px;
     cursor: pointer;
   }
-
   #word a {
     text-decoration: none;
     font-size: 24px;
   }
-
   #word a:hover {
     background: none;
   }
-
 }
