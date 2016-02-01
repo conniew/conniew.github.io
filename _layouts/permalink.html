@@ -37,7 +37,7 @@
     <a href="../">home</a>
     {% for collection in site.collections %}
       <a href="../{{ collection.label }}">
-        {{collection | first}}
+        {{collection.label}}
       </a>
     {% endfor %}
   </div>
