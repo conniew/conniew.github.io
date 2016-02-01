@@ -22,7 +22,7 @@
         <div class="footer">
           Copyright &#169; Connie Wan 2015-2016
 
-          {% if !page.fixed %}
+          {% if page.fixed != true %}
             <div class="date">
               Last updated: {{ page.date | date: '%B %d, %Y' }}
             </div>

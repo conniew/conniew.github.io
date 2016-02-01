@@ -52,7 +52,7 @@
               Permalink:
               <a href="{{ item.url }}">http://con.ilogues.com{{ item.url }}</a>
 
-              {% if !item.fixed %}
+              {% if item.fixed != true %}
                 <div class="date">
                   Last updated: {{ item.date | date: '%B %d, %Y' }}
                 </div>
