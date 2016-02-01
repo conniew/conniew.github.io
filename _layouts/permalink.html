@@ -36,7 +36,7 @@
   <div id="footer">
     <a href="../">home</a>
     {% for collection in site.collections %}
-      <a href="../{{ collection | first }}">
+      <a href="../{{ collection.label }}">
         {{collection | first}}
       </a>
     {% endfor %}

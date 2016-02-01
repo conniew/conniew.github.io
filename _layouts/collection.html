@@ -68,7 +68,7 @@
   <div id="footer">
     <a href="../">home</a>
     {% for collection in site.collections %}
-      {% capture collectionName %}{{ collection | first }}{% endcapture %}
+      {% capture collectionName %}{{ collection.label }}{% endcapture %}
       <a {% if collectionName != page.path %} href="../{{ collectionName }} {% endif %}"
                 {% if collectionName == page.path %} class="active" {% endif %}>
         {{collectionName}}
