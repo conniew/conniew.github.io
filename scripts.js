@@ -96,8 +96,8 @@ function scrollToElement(target) {
 }
 
 function togglePreview(preview, scroll) {
-  if (!preview.classList.contains('active') && scroll) {
-    scrollToElement(preview);
+  if (!preview.classList.contains('active')) {
+    if (scroll) scrollToElement(preview);
     loadImages(preview);
   }
   preview.classList.toggle('active');
