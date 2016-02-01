@@ -13,6 +13,7 @@ function updateControls() {
 
 function expandAll() {
   var collapsedPreviews = document.querySelectorAll('.preview:not(.active)');
+  loadImages(document.querySelector('#content'));
   for (var i = 0; i < collapsedPreviews.length; i++) {
     togglePreview(collapsedPreviews[i], false);
   }
