@@ -24,6 +24,9 @@ function _highlightNextPreview(reverse) {
 
 // [private] Process keyboard events
 function _handleKeyboardShortcut(event) {
+  // Ignore all if CTRL is modifying
+  if (event.ctrlKey) return;
+
   if (event.keyCode == 38) {  // UP
     event.preventDefault();  // Prevent scrolling of the page
     _highlightNextPreview(true);
