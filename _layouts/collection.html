@@ -68,10 +68,12 @@
     <a href="../">home</a>
     {% for collection in site.collections %}
       {% capture collectionName %}{{ collection.label }}{% endcapture %}
-      <a {% if collectionName != page.path %} href="../{{ collectionName }} {% endif %}"
-                {% if collectionName == page.path %} class="active" {% endif %}>
-        {{collectionName}}
-      </a>
+      {% if collectionName != 'posts' %}
+        <a {% if collectionName != page.path %} href="../{{ collectionName }} {% endif %}"
+                  {% if collectionName == page.path %} class="active" {% endif %}>
+          {{collectionName}}
+        </a>
+      {% endif %}
     {% endfor %}
   </div>
 

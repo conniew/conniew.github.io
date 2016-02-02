@@ -36,9 +36,11 @@
   <div id="footer">
     <a href="../">home</a>
     {% for collection in site.collections %}
-      <a href="../{{ collection.label }}">
-        {{collection.label}}
-      </a>
+      {% if collection.label != 'posts' %}
+        <a href="../{{ collection.label }}">
+          {{collection.label}}
+        </a>
+      {% endif %}
     {% endfor %}
   </div>
 
