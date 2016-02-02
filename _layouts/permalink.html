@@ -42,7 +42,10 @@
     {% endfor %}
   </div>
 
+  <script type="text/javascript" src="../scripts/theme.js"></script>
+  <script type="text/javascript" src="../scripts/images.js"></script>
   <script type="text/javascript">
+    setTheme();
     document.querySelector('.body').style.top =
         document.querySelector('.heading').offsetHeight + 'px';
     loadImages(document.querySelector('#content'));

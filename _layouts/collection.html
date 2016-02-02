@@ -10,8 +10,7 @@
     {% endif %}
   {% endfor %}
 </head>
-<body onload="loadCollectionPage()">
-  <script type="text/javascript" src="../scripts.js"></script>
+<body>
 
   <div id="controls">
     <button class="control prev" title="Previous Page"></button>
@@ -75,5 +74,16 @@
       </a>
     {% endfor %}
   </div>
+
+  <script type="text/javascript" src="../scripts/theme.js"></script>
+  <script type="text/javascript" src="../scripts/shortcuts.js"></script>
+  <script type="text/javascript" src="../scripts/controls.js"></script>
+  <script type="text/javascript" src="../scripts/images.js"></script>
+  <script type="text/javascript" src="../scripts/previews.js"></script>
+  <script type="text/javascript">
+    setTheme();
+    initPreviews();
+    initKeyboardShortcuts();
+  </script>
 </body>
 </html>
