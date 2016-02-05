@@ -45,13 +45,14 @@ function _togglePreview(preview, scroll) {
 
 // Expand a preview
 function expandPreview(preview, scroll) {
+  if (scroll) _scrollToElement(preview);
+
   preview.classList.add('active');
   preview.querySelector('.body').style.top =
     preview.querySelector('.heading').offsetHeight + 'px';
 
   _updateControls();
 
-  if (scroll) _scrollToElement(preview);
   loadImages(preview);
 }
 
