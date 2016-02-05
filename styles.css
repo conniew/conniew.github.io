@@ -421,7 +421,7 @@ a:focus {
 }
 
 .preview:not(.active) .body {
-  visibility: hidden;
+  display: none;
 }
 
 .preview .body .content {
