@@ -1,10 +1,79 @@
 ---
 layout: permalink
-date: "2015-10-13"
-title: "Hello, World!"
-subtitle: ""
+title: "Conilogues"
+subtitle: "Meta-post about this website."
 ---
 
 <p>
-Coming Soon
+Hello, World!
+Welcome to my website.
+Here is where I post my art, writing, programming, and brainstorming projects.
+It's meant to be a portfolio rather than a blog:
+it's a place for me to display my best works and show off what I have made.
+</p>
+
+<p>
+The website itself is also an ongoing programming project.
+As a web developer, of course I needed to build the website from scratch.
+This is the first iteration of the experiment, and it will continue to evolve.
+</p>
+
+<h3>Infrastructure</h3>
+
+<p>
+The site itself is static, hosted on <a href="http://github.com" target="_blank">GitHub</a>.
+As with most GitHub Pages websites, the pages are generated using <a href="http://jekyllrb.com" target="_blank">Jekyll</a>.
+</p>
+
+<p>
+The templating is HTML sprinkled with <a href="http://liquidmarkup.org/" target="_blank">Liquid</a> markup.
+The styling is a mix of basic CSS and some <a href="http://sass-lang.com/" target="_blank">SASS</a> for convenience.
+The scripting is plain JavaScript all the way.
+</p>
+
+<h3>Site Features</h3>
+
+<h4>Theming</h4>
+
+<p>
+On a typical page, the website can be toggled between a light and dark theme using the button in the lower left.
+Theming was a challenge for two major reasons: SASS build rules in Jekyll, and static website content.
+This resulted in two major implementation efforts: theming in basic CSS, and storing user state with cookies.
+</p>
+
+<p>
+Plain CSS theming is an awful idea. 
+One day, this section will be amended to include an implementation that makes use of SASS variables and overrides.
+However, for now, theming is accomplished by toggling a top-level class and repeating all color-containing CSS rules with a <code>.dark</code> prefix.
+As part of this effort, it was necessary to distill all the website's colors into a small handful of values (perfect for SASS variables... but not actually using them).
+Currently these colors are somewhat arbitrary hex values; however, the day for an accessibility evaluation will come, at which point these will be replaced by RGBA values that meet accessibility contrast standards.
+</p>
+
+<p>
+Using cookies to store simple user state has been a much saner endeavor.
+The implementation is considerably simpler than the possible alternative of propagating URL query parameters to every page in the site (which also does not carry over well for separate visits).
+For every new visitor the theme defaults to "light," and the button to toggle theme is enabled only if cookies are enabled.
+Toggling the theme stores a simple <code>theme=[dark|light]</code> cookie with no expiration date.
+The cookie is checked at every page load to set the top-level theme class consistently for each user.
+</p>
+
+<h4>Keyboard Navigation</h4>
+
+<p>
+The site supports some global keyboard shortcuts.
+One set is for using the control buttons in the gutters of a typical page, which should hopefully be self-explanatory.
+Arrow keys will also help navigate between posts, and keyboard shortcuts on posts make them act more like other actionable elements, such as buttons and links.
+TAB navigation is also preserved.
+</p>
+
+<h4>Image Previews</h4>
+
+<p>
+Coming soon.
+</p>
+
+<h4>Pagination</h4>
+
+<p>
+Coming soon.
 </p>
