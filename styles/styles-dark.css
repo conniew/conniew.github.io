@@ -46,45 +46,45 @@ body.dark {
   color: #DDDDDD;
 }
 
-.dark .preview {
+.dark .post {
   border-color: #555555;
 }
 
-.dark .preview .heading {
+.dark .post .heading {
   color: #888888;
 }
 
-.dark .preview.active .heading {
+.dark .post.active .heading {
   color: #CCCCCC;
   border-color: #343434;
 }
 
-.dark .preview .title {
+.dark .post .title {
   color: #CCCCCC;
 }
 
-.dark .preview:not(.active):hover,
-.dark .preview:not(.active):focus {
+.dark .post:not(.active):hover,
+.dark .post:not(.active):focus {
   background-color: #303030;
 }
 
-.dark .preview .heading:hover {
+.dark .post .heading:hover {
   color: #CCCCCC;
 }
 
-.dark .preview .heading:hover .title {
+.dark .post .heading:hover .title {
   color: #DDDDDD;
 }
 
-.dark .preview .heading:hover:after {
+.dark .post .heading:hover:after {
   border-color: #555555;
 }
 
-.dark .preview.active .heading:after {
+.dark .post.active .heading:after {
   border-color: #555555;
 }
 
-.dark .preview .body .footer {
+.dark .post .body .footer {
   border-color: #343434;
 }
 

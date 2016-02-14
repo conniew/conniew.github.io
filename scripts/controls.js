@@ -1,17 +1,17 @@
 // Update control buttons
-// [requires: previews.js]
+// [requires: posts.js]
 
-// Expand all previews
+// Expand all posts
 function expandAll() {
-  var collapsedPreviews = document.querySelectorAll('.preview:not(.active)');
+  var collapsedPreviews = document.querySelectorAll('.post:not(.active)');
   for (var i = 0; i < collapsedPreviews.length; i++) {
     expandPreview(collapsedPreviews[i]);
   }
 }
 
-// Collapse all previews
+// Collapse all posts
 function collapseAll() {
-  var expandedPreviews = document.querySelectorAll('.preview.active');
+  var expandedPreviews = document.querySelectorAll('.post.active');
   for (var i = 0; i < expandedPreviews.length; i++) {
     collapsePreview(expandedPreviews[i]);
   }

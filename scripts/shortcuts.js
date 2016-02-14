@@ -1,11 +1,11 @@
 // Set global keyboard shortcuts
 // [requires: controls.js]
 
-// [private] Highlight (focus on) the next preview, with wrapping
+// [private] Highlight (focus on) the next post, with wrapping
 function _highlightNextPreview(reverse) {
   var next = null;
 
-  if (document.activeElement.classList.contains('preview')) {
+  if (document.activeElement.classList.contains('post')) {
     var curr = document.activeElement;
 
     if (!reverse) next = curr.nextElementSibling;
@@ -13,10 +13,10 @@ function _highlightNextPreview(reverse) {
   }
 
   if (!next) {
-    var previewContainer = document.body.querySelector('#content');
+    var postContainer = document.body.querySelector('#content');
 
-    if (!reverse) next = previewContainer.firstElementChild;
-    else          next = previewContainer.lastElementChild;
+    if (!reverse) next = postContainer.firstElementChild;
+    else          next = postContainer.lastElementChild;
   }
 
   next.focus();

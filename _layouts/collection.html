@@ -36,7 +36,7 @@
     {% for item in items %}
       {% assign extension = item.relative_path | split: '.' | last %}
       {% if extension == 'html' %}
-        <div class="preview"
+        <div class="post"
              id="{{ item.relative_path | split: '/' | last | split: '.' | first }}"
              tabindex="0">
           <div class="heading">
@@ -82,7 +82,7 @@
   <script type="text/javascript" src="../scripts/shortcuts.js"></script>
   <script type="text/javascript" src="../scripts/controls.js"></script>
   <script type="text/javascript" src="../scripts/images.js"></script>
-  <script type="text/javascript" src="../scripts/previews.js"></script>
+  <script type="text/javascript" src="../scripts/posts.js"></script>
   <script type="text/javascript">
     setTheme();
     initPreviews();

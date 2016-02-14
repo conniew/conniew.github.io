@@ -1,4 +1,4 @@
-// Init and update previews
+// Init and update posts
 // [requires: images.js]
 
 // [private] Update the control disabled states
@@ -8,8 +8,8 @@ function _updateControls() {
   var prevControl = document.querySelector('.control.prev');
   var nextControl = document.querySelector('.control.next');
 
-  expandControl.disabled = !document.querySelector('.preview:not(.active)');
-  collapseControl.disabled = !document.querySelector('.preview.active');
+  expandControl.disabled = !document.querySelector('.post:not(.active)');
+  collapseControl.disabled = !document.querySelector('.post.active');
 
   // TODO: update this based on page, probably requires page# metadata
   prevControl.disabled = true;
@@ -36,43 +36,43 @@ function _scrollToElement(target) {
 }
 
 // [private]
-function _togglePreview(preview, scroll) {
-  if (!preview.classList.contains('active'))
-    expandPreview(preview, scroll);
+function _togglePreview(post, scroll) {
+  if (!post.classList.contains('active'))
+    expandPreview(post, scroll);
   else
-    collapsePreview(preview);
+    collapsePreview(post);
 }
 
-// Expand a preview
-function expandPreview(preview, scroll) {
-  if (scroll) _scrollToElement(preview);
+// Expand a post
+function expandPreview(post, scroll) {
+  if (scroll) _scrollToElement(post);
 
-  preview.classList.add('active');
-  preview.querySelector('.body').style.top =
-    preview.querySelector('.heading').offsetHeight + 'px';
+  post.classList.add('active');
+  post.querySelector('.body').style.top =
+    post.querySelector('.heading').offsetHeight + 'px';
 
   _updateControls();
 
-  loadImages(preview);
+  loadImages(post);
 }
 
-// Collapse a preview
-function collapsePreview(preview) {
-  preview.classList.remove('active');
-  preview.querySelector('.body').style.top =
-    preview.querySelector('.heading').offsetHeight + 'px';
+// Collapse a post
+function collapsePreview(post) {
+  post.classList.remove('active');
+  post.querySelector('.body').style.top =
+    post.querySelector('.heading').offsetHeight + 'px';
   _updateControls();
 }
 
-// Initialize preview behavior
+// Initialize post behavior
 function initPreviews() {
   _updateControls();
 
-  var previews = document.querySelectorAll('.preview');
+  var posts = document.querySelectorAll('.post');
 
-  for (var i = 0; i < previews.length; i++) {
+  for (var i = 0; i < posts.length; i++) {
     // Preview: Allow ENTER on focus to expand/collapse, ESC to collapse
-    previews[i].onkeydown = function(event) {
+    posts[i].onkeydown = function(event) {
       if (event.keyCode == 13) // ENTER was pressed
         _togglePreview(event.target, true);
       else if (event.keyCode == 27) // ESC was pressed
@@ -80,11 +80,11 @@ function initPreviews() {
     };
 
     // Heading: Allow click in heading to expand/collapse
-    previews[i].firstElementChild.onclick =
+    posts[i].firstElementChild.onclick =
       function(event) { _togglePreview(event.target.parentNode, true); };
 
     // Content: Allow scrolling within content
-    previews[i].querySelector('.content').onkeydown = function(event) {
+    posts[i].querySelector('.content').onkeydown = function(event) {
       if (event.keyCode == 38 || event.keyCode == 40) // UP or DOWN was pressed
         event.stopPropagation();
     };

@@ -201,9 +201,9 @@ a:focus {
 
 
 
-/* Begin preview panels */
+/* Begin post panels */
 
-.preview {
+.post {
   position: relative;
   height: 50px;
 
@@ -217,12 +217,12 @@ a:focus {
   transition: height 0.3s ease 0s, border-width 0.3s ease 0s;
 }
 
-.preview.active {
+.post.active {
   height: 100%;
 }
 
 /* Heading container */
-.preview .heading {
+.post .heading {
   min-height: 50px;
   margin: 0;
   padding: 10px 30px 10px 20px;
@@ -238,18 +238,18 @@ a:focus {
   text-overflow: ellipsis;
 }
 
-.preview .heading > * {
+.post .heading > * {
   pointer-events: none;
 }
 
-.preview.active .heading {
+.post.active .heading {
   white-space: normal;
   color: #444444;
   border-bottom: 1px solid #DEDEDE;
 }
 
 /* Title font */
-.preview .title {
+.post .title {
   margin-right: 10px;
 
   color: #444444;
@@ -257,31 +257,31 @@ a:focus {
   line-height: 29px;
 }
 
-.preview.active .title {
+.post.active .title {
   display: block;
   margin-bottom: 10px;
 }
 
 /* Hover/focus state */
-.preview:not(.active):hover,
-.preview:not(.active):focus {
+.post:not(.active):hover,
+.post:not(.active):focus {
   background-color: #F2F2F2;
 }
 
-.preview .heading:hover {
+.post .heading:hover {
   color: #444444;
 
   cursor: pointer;
 }
 
-.preview .heading:hover .title {
+.post .heading:hover .title {
   color: #000000;
 
   cursor: pointer;
 }
 
 /* Expand arrow */
-.preview .heading:after {
+.post .heading:after {
   content: "";
 
   position: absolute;
@@ -299,12 +299,12 @@ a:focus {
   transition: top 0.3s linear 0s, transform 0.3s linear 0s;
 }
 
-.preview .heading:hover:after {
+.post .heading:hover:after {
   border-right: 2px solid #AAAAAA;
   border-bottom: 2px solid #AAAAAA;
 }
 
-.preview.active .heading:after {
+.post.active .heading:after {
   top: 20px;
   border-right: 2px solid #AAAAAA;
   border-bottom: 2px solid #AAAAAA;
@@ -315,18 +315,18 @@ a:focus {
 }
 
 /* Permalink unchanging header */
-.preview .heading.static {
+.post .heading.static {
   pointer-events: none;
 }
 
-.preview .heading.static:after {
+.post .heading.static:after {
   border: none;
 }
 
 /* Content container */
-.preview .body {
+.post .body {
   position: absolute;
-  top: 50px; /* preview heading, adjusted dynamically */
+  top: 50px; /* post heading, adjusted dynamically */
   bottom: 0;
   left: 0;
   right: 0;
@@ -334,11 +334,11 @@ a:focus {
   overflow: hidden;
 }
 
-.preview:not(.active) .body {
+.post:not(.active) .body {
   display: none;
 }
 
-.preview .body .content {
+.post .body .content {
   position: absolute;
   left: 0;
   right: 0;
@@ -350,7 +350,7 @@ a:focus {
   overflow-x: hidden;
 }
 
-.preview .body .footer {
+.post .body .footer {
   position: absolute;
   bottom: 0;
   padding: 5px 10px;
@@ -362,12 +362,12 @@ a:focus {
   font-size: 11px;
 }
 
-.preview .body .footer .date {
+.post .body .footer .date {
   float: right;
   text-align: right;
 }
 
-/* End preview panels */
+/* End post panels */
 
 
 /* Begin control buttons */
