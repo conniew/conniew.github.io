@@ -71,9 +71,9 @@ function initPreviews() {
   var posts = document.querySelectorAll('.post');
 
   for (var i = 0; i < posts.length; i++) {
-    // Preview: Allow ENTER on focus to expand/collapse, ESC to collapse
+    // Preview: Allow ENTER and SPACE on focus to expand/collapse, ESC to collapse
     posts[i].onkeydown = function(event) {
-      if (event.keyCode == 13) // ENTER was pressed
+      if (event.keyCode == 13 || event.keyCode == 32) // ENTER or SPACE was pressed
         _togglePreview(event.target, true);
       else if (event.keyCode == 27) // ESC was pressed
         collapsePreview(event.target);
