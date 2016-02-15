@@ -44,7 +44,7 @@ This resulted in two major implementation efforts: theming in basic CSS, and sto
 
 <p>
 Plain CSS theming is an awful idea. 
-One day, this section will be amended to include an implementation that makes use of SASS variables and overrides.
+[Medium Priority] One day, this section will be amended to include an implementation that makes use of SASS variables and overrides.
 However, for now, theming is accomplished by toggling a top-level class and repeating all color-containing CSS rules with a <code>.dark</code> prefix.
 As part of this effort, it was necessary to distill all the website's colors into a small handful of values (perfect for SASS variables... but not actually using them).
 Currently these colors are somewhat arbitrary hex values; however, the day for an accessibility evaluation will come, at which point these will be replaced by RGBA values that meet accessibility contrast standards.
@@ -70,11 +70,24 @@ TAB navigation is also preserved.
 <h4>Image Previews</h4>
 
 <p>
-Coming soon.
+Most images on the site show a preview overlay when clicked.
+The overlay itself is a blank container that is hidden, shown, and populated with the relevant image in JavaScript.
+The image-to-overlay archetype is captured in a reusable template that can be included in any post.
+</p>
+
+<p>
+Currently, only single images can be previewed.
+[Low Priority] Eventually, previews should be able to toggle between images within the same post.
+</p>
+
+<h4>Book Previews</h4>
+
+<p>
+[High Priority] A book-like page-turning format is in the immediate plans, for displaying certain forms of writing.
 </p>
 
 <h4>Pagination</h4>
 
 <p>
-Coming soon.
+[Medium Priority] Pagination of posts is on the horizon, to manage (future) large numbers of posts.
 </p>
