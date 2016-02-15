@@ -7,10 +7,6 @@
   box-sizing: border-box;
 }
 
-*:focus {
-  outline: none;
-}
-
 button::-moz-focus-inner,
 a::-moz-focus-inner {
   border: 0;
@@ -41,6 +37,12 @@ a {
 a:hover,
 a:focus {
   text-decoration: underline;
+}
+
+button:focus,
+div:focus,
+#footer a:focus {
+  outline: none;
 }
 
 /* Main content of all pages */

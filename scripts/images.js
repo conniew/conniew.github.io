@@ -30,6 +30,14 @@ function closeImagePreview() {
   document.querySelector('[src="' + url + '"]').parentNode.focus();
 }
 
+// Handle keyboard shortcuts for image preview
+function handleImagePreviewKeypress(event) {
+  event.stopPropagation();
+
+  if (event.keyCode == 27) // ESC
+    closeImagePreview();
+}
+
 // Load deferred images
 function loadImages(container) {
   var deferredImgs = container.getElementsByTagName('img');

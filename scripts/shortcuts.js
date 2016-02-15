@@ -1,6 +1,5 @@
 // Set global keyboard shortcuts
 // [requires: controls.js]
-// [requires: images.js]
 
 // [private] Highlight (focus on) the next post, with wrapping
 function _highlightNextPost(reverse) {
@@ -47,9 +46,6 @@ function _handleKeyboardShortcut(event) {
   }
   else if (event.keyCode == 61 || event.keyCode == 187) {  // EQUALS (plus)
     expandAll();
-  }
-  else if (event.keyCode == 27) { // ESC
-    closeImagePreview();
   }
 };
 

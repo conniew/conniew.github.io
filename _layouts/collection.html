@@ -30,7 +30,8 @@
     </button>
   </div>
 
-  <div id="image-preview" onclick="closeImagePreview()">
+  <div id="image-preview" onclick="closeImagePreview()"
+                          onkeydown="handleImagePreviewKeypress(event)">
     <a href='' onclick="event.stopPropagation();"><img src=''></a>
   </div>
 
