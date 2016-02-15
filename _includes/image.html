@@ -1,20 +1,9 @@
 <div class="gallery">
-  <!-- Display style, with one image -->
-  {% if include.url %}
+  {% assign urls = include.urls | split: ' ' %}
+  {% for url in urls %}
     <a href="javascript:;"
-       onclick="openImagePreview('{{ include.url }}')">
-      <img src="../deferred.png" data-src="{{ include.url }}">
+       onclick="openImagePreview('{{ url }}')">
+      <img src="../deferred.png" data-src="{{ url }}">
     </a>
-  {% endif %}
-
-  <!-- Gallery style, with many images -->
-  {% if include.urls %}
-    {% assign urls = include.urls | split: ' ' %}
-    {% for url in urls %}
-      <a href="javascript:;"
-         onclick="openImagePreview('{{ url }}')">
-        <img src="../deferred.png" data-src="{{ url }}">
-      </a>
-    {% endfor %}
-  {% endif %}
+  {% endfor %}
 </div>
