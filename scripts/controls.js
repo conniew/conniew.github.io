@@ -3,17 +3,17 @@
 
 // Expand all posts
 function expandAll() {
-  var collapsedPreviews = document.querySelectorAll('.post:not(.active)');
-  for (var i = 0; i < collapsedPreviews.length; i++) {
-    expandPreview(collapsedPreviews[i]);
+  var collapsedPosts = document.querySelectorAll('.post:not(.active)');
+  for (var i = 0; i < collapsedPosts.length; i++) {
+    expandPost(collapsedPosts[i]);
   }
 }
 
 // Collapse all posts
 function collapseAll() {
-  var expandedPreviews = document.querySelectorAll('.post.active');
-  for (var i = 0; i < expandedPreviews.length; i++) {
-    collapsePreview(expandedPreviews[i]);
+  var expandedPosts = document.querySelectorAll('.post.active');
+  for (var i = 0; i < expandedPosts.length; i++) {
+    collapsePost(expandedPosts[i]);
   }
 }
 

@@ -36,15 +36,15 @@ function _scrollToElement(target) {
 }
 
 // [private]
-function _togglePreview(post, scroll) {
+function _togglePost(post, scroll) {
   if (!post.classList.contains('active'))
-    expandPreview(post, scroll);
+    expandPost(post, scroll);
   else
-    collapsePreview(post);
+    collapsePost(post);
 }
 
 // Expand a post
-function expandPreview(post, scroll) {
+function expandPost(post, scroll) {
   if (scroll) _scrollToElement(post);
 
   post.classList.add('active');
@@ -57,31 +57,32 @@ function expandPreview(post, scroll) {
 }
 
 // Collapse a post
-function collapsePreview(post) {
+function collapsePost(post) {
   post.classList.remove('active');
   post.querySelector('.body').style.top =
     post.querySelector('.heading').offsetHeight + 'px';
+  post.focus();
   _updateControls();
 }
 
 // Initialize post behavior
-function initPreviews() {
+function initPosts() {
   _updateControls();
 
   var posts = document.querySelectorAll('.post');
 
   for (var i = 0; i < posts.length; i++) {
-    // Preview: Allow ENTER and SPACE on focus to expand/collapse, ESC to collapse
+    // Post: Allow ENTER and SPACE on focus to expand, ESC to collapse
     posts[i].onkeydown = function(event) {
       if (event.keyCode == 13 || event.keyCode == 32) // ENTER or SPACE was pressed
-        _togglePreview(event.target, true);
+        expandPost(this, true);
       else if (event.keyCode == 27) // ESC was pressed
-        collapsePreview(event.target);
+        collapsePost(this);
     };
 
     // Heading: Allow click in heading to expand/collapse
     posts[i].firstElementChild.onclick =
-      function(event) { _togglePreview(event.target.parentNode, true); };
+      function(event) { _togglePost(event.target.parentNode, true); };
 
     // Content: Allow scrolling within content
     posts[i].querySelector('.content').onkeydown = function(event) {

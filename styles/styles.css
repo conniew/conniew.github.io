@@ -214,7 +214,9 @@ a:focus {
 
   font-family: Times;
 
-  transition: height 0.3s ease 0s, border-width 0.3s ease 0s;
+  transition: height 0.3s ease 0s;
+
+  z-index: 1;
 }
 
 .post.active {
@@ -393,7 +395,7 @@ a:focus {
 
   cursor: pointer;
 
-  z-index: 5;
+  z-index: 1;
 }
 
 .control:not(:disabled):hover,
@@ -530,8 +532,10 @@ a:focus {
 
 /* End control buttons */
 
+/* Begin images */
+
 /* Image container */
-.image {
+.gallery {
   width: 100%;
 
   text-align: center;
@@ -540,15 +544,43 @@ a:focus {
   margin: 20px 0;
 }
 
-.image img {
+.gallery img {
   display: inline;
 }
 
-.image a:hover {
+.gallery a:hover {
   text-decoration: none;
 }
 
-.image:after {
-  display: block;
-  content: "Click for full view."
+/* Image overlay */
+#image-preview {
+  display: none;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  overflow: hidden;
+
+  background-color: rgba(0, 0, 0, 0.75);
+
+  z-index: 3;
 }
+
+#image-preview.active {
+  display: block;
+}
+
+#image-preview img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  max-height: 90%;
+  max-width: 90%;
+}
+
+/* End images */

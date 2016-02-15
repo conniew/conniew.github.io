@@ -1,8 +1,9 @@
 // Set global keyboard shortcuts
 // [requires: controls.js]
+// [requires: images.js]
 
 // [private] Highlight (focus on) the next post, with wrapping
-function _highlightNextPreview(reverse) {
+function _highlightNextPost(reverse) {
   var next = null;
 
   if (document.activeElement.classList.contains('post')) {
@@ -29,11 +30,11 @@ function _handleKeyboardShortcut(event) {
 
   if (event.keyCode == 38) {  // UP
     event.preventDefault();  // Prevent scrolling of the page
-    _highlightNextPreview(true);
+    _highlightNextPost(true);
   }
   else if (event.keyCode == 40) {  // DOWN
     event.preventDefault();  // Prevent scrolling of the page
-    _highlightNextPreview();
+    _highlightNextPost();
   }
   else if (event.keyCode == 188) {  // COMMA (left angle bracket)
     // TODO: Make this go to the previous page.
@@ -46,6 +47,9 @@ function _handleKeyboardShortcut(event) {
   }
   else if (event.keyCode == 61 || event.keyCode == 187) {  // EQUALS (plus)
     expandAll();
+  }
+  else if (event.keyCode == 27) { // ESC
+    closeImagePreview();
   }
 };
 

@@ -30,6 +30,10 @@
     </button>
   </div>
 
+  <div id="image-preview" onclick="closeImagePreview()">
+    <a href='' onclick="event.stopPropagation();"><img src=''></a>
+  </div>
+
   <div id="content">
 
     {% assign items = site[page.path] | sort:"date" | reverse %}
@@ -85,7 +89,7 @@
   <script type="text/javascript" src="../scripts/posts.js"></script>
   <script type="text/javascript">
     setTheme();
-    initPreviews();
+    initPosts();
     initKeyboardShortcuts();
   </script>
 </body>
