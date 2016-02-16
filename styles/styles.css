@@ -39,7 +39,7 @@ a:focus {
   text-decoration: underline;
 }
 
-button:focus,
+#controls button:focus,
 div:focus,
 #footer a:focus {
   outline: none;
@@ -389,7 +389,6 @@ div:focus,
   height: 50px;
 
   padding: 0;
-  outline: 0;
 
   border: 1px solid #AAAAAA;
   border-radius: 50%;
@@ -555,7 +554,7 @@ div:focus,
 }
 
 /* Image overlay */
-#image-preview {
+#image-overlay {
   display: none;
 
   position: absolute;
@@ -571,11 +570,65 @@ div:focus,
   z-index: 3;
 }
 
-#image-preview.active {
+#image-overlay.active {
   display: block;
 }
 
-#image-preview img {
+#image-display {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 120px; /* Thumbnail container */
+}
+
+#image-display .close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+
+  width: 24px;
+  height: 24px;
+
+  border: 2px solid #FFFFFF;
+  border-radius: 12px;
+
+  background-color: #000000;
+
+  padding: 0;
+
+  cursor: pointer;
+
+  transform: rotate(45deg);
+}
+
+#image-display .close:before {
+  content: "";
+
+  position: relative;
+  left: calc(50% - 1px);
+  top: 1px;
+  width: 0;
+  height: 10px;
+  display: block;
+
+  border-left: 2px solid #FFFFFF;
+}
+
+#image-display .close:after {
+  content: "";
+
+  position: relative;
+  left: calc(50% - 5px);
+  top: -5px;
+  width: 10px;
+  height: 0;
+  display: block;
+
+  border-top: 2px solid #FFFFFF;
+}
+
+#image-container img {
   position: absolute;
   left: 50%;
   top: 50%;
@@ -585,4 +638,73 @@ div:focus,
   max-width: 90%;
 }
 
+#image-thumbnail-container {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 120px;
+}
+
+#image-thumbnails {
+  position: absolute;
+  left: 25px; /* prev-page button */
+  right: 25px; /* next-page button */
+  top: 0;
+  bottom: 0;
+
+  text-align: center;
+
+  white-space: nowrap;
+  overflow-x: auto;
+}
+
+#image-thumbnails .thumbnail {
+  width: 90px;
+  height: 90px;
+
+  margin: 5px;
+  padding: 0;
+
+  border: 2px solid transparent;
+  background: none;
+
+  vertical-align: middle;
+}
+
+#image-thumbnails .thumbnail.active {
+  border-color: #8B0000;
+}
+
+#image-thumbnails .thumbnail img {
+  max-width: 86px;
+  max-height: 86px;
+}
+
 /* End images */
+
+/* Begin page buttons */
+
+.prev-page {
+  float: left;
+
+  height: 100%;
+  width: 25px;
+}
+
+.prev-page:before {
+  content: '«';
+}
+
+.next-page {
+  float: right;
+
+  height: 100%;
+  width: 25px;
+}
+
+.next-page:after {
+  content: '»';
+}
+
+/* End page buttons */

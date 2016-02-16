@@ -8,10 +8,7 @@
 <body>
   <script type="text/javascript" src="../scripts.js"></script>
 
-  <div id="image-preview" onclick="closeImagePreview()"
-                          onkeydown="handleImagePreviewKeypress(event)">
-    <a href='' onclick="event.stopPropagation();"><img src=''></a>
-  </div>
+  {% include image-overlay.html %}
 
   <div id="content">
 

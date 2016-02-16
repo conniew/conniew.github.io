@@ -1,41 +1,128 @@
-// Previews for lazy-loaded images
+// Overlays for lazy-loaded images
 
-// Open an image preview (overlay on page)
-function openImagePreview(url) {
-  var preview = document.querySelector('#image-preview');
-  preview.classList.add('active');
+var imageOverlay = document.querySelector('#image-overlay');
+var imageContainer = imageOverlay.querySelector('#image-container');
+var imageThumbnails = imageOverlay.querySelector('#image-thumbnails');
 
-  var link = preview.firstElementChild;
-  link.href = url;
-
-  var image = link.firstElementChild;
-  image.src = url;
-
-  link.focus();
+// [private] Get the current active thumbnail and make it inactive
+function _clearActiveThumbnail() {
+  var activeThumbnail = imageThumbnails.querySelector('.thumbnail.active');
+  if (activeThumbnail) activeThumbnail.classList.remove('active');
+  return activeThumbnail;
 }
 
-// Close an image preview
-function closeImagePreview() {
-  var preview = document.querySelector('#image-preview');
+// [private] Update the disabled states of the next/prev thumbnail buttons
+function _updateThumbnailButtons() {
+  var nextButton = imageOverlay.querySelector('.next-page');
+  var prevButton = imageOverlay.querySelector('.prev-page');
 
-  var link = preview.firstElementChild;
-  var url = link.getAttribute('href');
-  link.href = '';
+  var activeThumbnail = imageThumbnails.querySelector('.thumbnail.active');
+  var prevSibling = activeThumbnail.previousElementSibling;
+  var nextSibling = activeThumbnail.nextElementSibling;
+  nextButton.disabled = !(nextSibling && nextSibling.classList.contains('thumbnail'));
+  prevButton.disabled = !(prevSibling && prevSibling.classList.contains('thumbnail'));
+}
 
-  var image = link.firstElementChild;
-  image.src = '';
+// [private] Toggle to the given image in the overlay
+function _viewImage(url, thumbnail) {
+  if (thumbnail) {
+    _clearActiveThumbnail();
+    thumbnail.classList.add('active');
+    _updateThumbnailButtons();
+    thumbnail.focus();
 
-  preview.classList.remove('active');
+    url = thumbnail.firstElementChild.getAttribute('src');
+  }
+
+  imageContainer.href = url;
+  imageContainer.firstElementChild.src = url;
+}
+
+// Toggle to the next image in the post
+function viewNextImage() {
+  var currThumbnail = _clearActiveThumbnail();
+  _viewImage('', currThumbnail.nextElementSibling);
+}
+
+// Toggle to the previous image in the post
+function viewPreviousImage() {
+  var currThumbnail = _clearActiveThumbnail();
+  _viewImage('', currThumbnail.previousElementSibling);
+}
+
+// Open the image overlay with the right image
+function openImageOverlay(urls, url) {
+  imageOverlay.classList.add('active');
+
+  // Populate the thumbnails
+  urls = urls.split(' ');
+  for (var i = 0; i < urls.length; i++) {
+    var button = document.createElement('button');
+    button.onclick = function(event) {
+      _viewImage('', event.target);
+      event.stopPropagation();
+    };
+    button.classList.add('thumbnail');
+    var thumbnail = document.createElement('img');
+    thumbnail.src = urls[i];
+
+    button.appendChild(thumbnail);
+    imageThumbnails.appendChild(button);
+
+    if (urls[i] == url) button.classList.add('active');
+  }
+
+  _viewImage(url);
+  _updateThumbnailButtons();
+
+  imageOverlay.querySelector('#image-container').focus();
+}
+
+// Clear and close the image overlay
+function closeImageOverlay() {
+  var url = imageContainer.getAttribute('href');
+
+  _viewImage('');
+
+  var thumbnails = imageThumbnails.querySelectorAll('.thumbnail');
+  for (var i = 0; i < thumbnails.length; i++) {
+    imageThumbnails.removeChild(thumbnails[i]);
+  }
+
+  imageOverlay.classList.remove('active');
 
   document.querySelector('[src="' + url + '"]').parentNode.focus();
 }
 
-// Handle keyboard shortcuts for image preview
-function handleImagePreviewKeypress(event) {
+// Handle keyboard shortcuts for image overlay
+function handleImageOverlayKeypress(event) {
   event.stopPropagation();
 
-  if (event.keyCode == 27) // ESC
-    closeImagePreview();
+  var nextButton = imageOverlay.querySelector('.next-page');
+  var prevButton = imageOverlay.querySelector('.prev-page');
+
+  if (event.keyCode == 27) { // ESC
+    closeImageOverlay();
+  }
+  else if (event.keyCode == 37 && !prevButton.disabled) { // LEFT ARROW
+    viewPreviousImage();
+  }
+  else if (event.keyCode == 39 && !nextButton.disabled) { // RIGHT ARROW
+    viewNextImage();
+  }
+  else if (event.keyCode == 9) { // TAB
+    // Keep focus withing the overlay
+    var firstFocusElement = imageOverlay.querySelector('.close');
+    var lastFocusElement = imageOverlay.querySelector('.next-page');
+    if (event.shiftKey && document.activeElement == firstFocusElement) {
+      event.preventDefault();
+      lastFocusElement.focus();
+    }
+    if (!event.shiftKey && document.activeElement == lastFocusElement) {
+      event.preventDefault();
+      firstFocusElement.focus();
+    }
+  }
 }
 
 // Load deferred images

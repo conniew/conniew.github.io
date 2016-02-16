@@ -1,0 +1,16 @@
+<div id="image-overlay" onclick="closeImageOverlay()"
+                        onkeydown="handleImageOverlayKeypress(event)">
+  <div id="image-display">
+    <button class="close" onclick="closeImageOverlay()"></button>
+    <a id="image-container" href='' onclick="event.stopPropagation();">
+      <img src=''>
+    </a>
+  </div>
+  <div id="image-thumbnail-container">
+    <button class="prev-page" onclick="viewPreviousImage(); event.stopPropagation()"></button>
+    <div id="image-thumbnails">
+      <!-- Thumbnails are added here -->
+    </div>
+    <button class="next-page" onclick="viewNextImage(); event.stopPropagation()"></button>
+  </div>
+</div>
