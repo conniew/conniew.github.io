@@ -2,7 +2,7 @@
   {% assign urls = include.urls | split: ' ' %}
   {% for url in urls %}
     <a href="javascript:;"
-      onclick="openImageOverlay('{{ include.urls }}', '{{ url }}')">
+      onclick="openImageOverlay('{{ include.urls | strip_newlines }}', '{{ url }}')">
       <img src="../deferred.png" data-src="{{ url }}">
     </a>
   {% endfor %}
