@@ -693,7 +693,7 @@ div:focus,
 }
 
 .prev-page:before {
-  content: '«';
+  content: '<';
 }
 
 .next-page {
@@ -704,7 +704,7 @@ div:focus,
 }
 
 .next-page:after {
-  content: '»';
+  content: '>';
 }
 
 /* End page buttons */
