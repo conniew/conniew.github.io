@@ -71,13 +71,21 @@ TAB navigation is also preserved.
 
 <p>
 Most images on the site show a preview overlay when clicked.
-The overlay itself is a blank container that is hidden, shown, and populated with the relevant image in JavaScript.
-The image-to-overlay archetype is captured in a reusable template that can be included in any post.
+This preview shows a larger image and gives the ability to browse through the other images in the same post.
 </p>
 
 <p>
-Currently, only single images can be previewed.
-[Low Priority] Eventually, previews should be able to toggle between images within the same post.
+Both the preview overlay and the in-page image archetype are written as reusable templates that hook up to the relevant event-handling behavior.
+The overlay itself is an empty container that is hidden, shown, and populated in JavaScript, and it is only included once per page.
+The image template is reusable per-post and accepts one or many image URLs to display.
+The rendered images come with the hook to initialize the overlay when clicked.
+</p>
+
+<p>
+The JavaScript behind the scenes mainly handles initializing the overlay and any event handling within the overlay.
+Each time the overlay is opened, the image and thumbnails are populated dynamically and hooked up to the behavior that allows navigation between images.
+The navigation behavior also encompasses basic keyboard shortcuts.
+When the overlay is closed, the dynamically-created thumbnails are cleaned up, leaving the (hidden) blank overlay for re-initialization.
 </p>
 
 <h4>Book Views</h4>
