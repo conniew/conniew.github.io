@@ -55,7 +55,7 @@ function openImageOverlay(urls, url) {
   imageOverlay.classList.add('active');
 
   // Populate the thumbnails
-  urls = urls.split(' ');
+  urls = urls.split(' ').filter(Boolean);
   for (var i = 0; i < urls.length; i++) {
     var button = document.createElement('button');
     button.onclick = function(event) {
