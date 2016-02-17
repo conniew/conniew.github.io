@@ -61,13 +61,13 @@ function openImageOverlay(urls, url) {
     button.onclick = function(event) {
       event.stopImmediatePropagation();
       event.stopPropagation();
-      _viewImage('', event.target);
+      _viewImage('', this);
     };
     button.classList.add('thumbnail');
-    var thumbnail = document.createElement('img');
-    thumbnail.src = urls[i];
+    var img = document.createElement('img');
+    img.src = urls[i];
 
-    button.appendChild(thumbnail);
+    button.appendChild(img);
     imageThumbnails.appendChild(button);
 
     if (urls[i] == url) button.classList.add('active');
