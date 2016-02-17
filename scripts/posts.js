@@ -45,6 +45,8 @@ function _togglePost(post, scroll) {
 
 // Expand a post
 function expandPost(post, scroll) {
+  if (post.classList.contains('active')) return;
+
   if (scroll) _scrollToElement(post);
 
   post.classList.add('active');
@@ -58,6 +60,8 @@ function expandPost(post, scroll) {
 
 // Collapse a post
 function collapsePost(post) {
+  if (!post.classList.contains('active')) return;
+
   post.classList.remove('active');
   post.querySelector('.body').style.top =
     post.querySelector('.heading').offsetHeight + 'px';
