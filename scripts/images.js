@@ -59,8 +59,9 @@ function openImageOverlay(urls, url) {
   for (var i = 0; i < urls.length; i++) {
     var button = document.createElement('button');
     button.onclick = function(event) {
-      _viewImage('', event.target);
+      event.stopImmediatePropagation();
       event.stopPropagation();
+      _viewImage('', event.target);
     };
     button.classList.add('thumbnail');
     var thumbnail = document.createElement('img');
