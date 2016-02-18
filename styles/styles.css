@@ -545,11 +545,12 @@ div:focus,
   margin: 20px 0;
 }
 
-.gallery img {
-  display: inline;
+.gallery a {
+  display: inline-block;
 }
 
-.gallery a:hover {
+.gallery a:hover,
+.gallery a:focus {
   text-decoration: none;
 }
 

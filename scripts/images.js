@@ -59,14 +59,15 @@ function openImageOverlay(urls, url) {
   for (var i = 0; i < urls.length; i++) {
     var button = document.createElement('button');
     button.onclick = function(event) {
-      _viewImage('', event.target);
+      event.stopImmediatePropagation();
       event.stopPropagation();
+      _viewImage('', this);
     };
     button.classList.add('thumbnail');
-    var thumbnail = document.createElement('img');
-    thumbnail.src = urls[i];
+    var img = document.createElement('img');
+    img.src = urls[i];
 
-    button.appendChild(thumbnail);
+    button.appendChild(img);
     imageThumbnails.appendChild(button);
 
     if (urls[i] == url) button.classList.add('active');
