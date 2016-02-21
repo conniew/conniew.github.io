@@ -687,10 +687,13 @@ div:focus,
 /* Begin page buttons */
 
 .prev-page {
-  float: left;
+  position: absolute;
+  left: 0;
 
   height: 100%;
   width: 25px;
+
+  border: 0;
 }
 
 .prev-page:before {
@@ -698,10 +701,13 @@ div:focus,
 }
 
 .next-page {
-  float: right;
+  position: absolute;
+  right: 0;
 
   height: 100%;
   width: 25px;
+
+  border: 0;
 }
 
 .next-page:after {
