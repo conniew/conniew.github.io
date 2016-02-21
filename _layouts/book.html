@@ -18,7 +18,7 @@
   </div>
 
   <input id="book-slider" type="range" step="2" min="-1"
-      max="{{ page.pages | modulo: 2 | times: -1 | plus: page.pages }}"
+      max="{{ page.pages | modulo: 2 | minus: 1 | plus: page.pages }}"
       oninput="viewPageSlider()" onchange="turnPageSlider()">
 
   <script type="text/javascript" src="../scripts/book.js"></script>
