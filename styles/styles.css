@@ -715,3 +715,55 @@ div:focus,
 }
 
 /* End page buttons */
+
+/* Begin chapter view */
+
+.chapters-container {
+  display: table;
+
+  position: absolute;
+  top: 5%;
+  left: 0;
+
+  width: 100%;
+  height: 90%;
+}
+
+.chapters-control {
+  display: table-row;
+  text-align: center;
+}
+
+.chapters-input {
+  display: inline-block;
+  width: 3ch;
+
+  text-align: right;
+}
+
+.chapters-frame {
+  display: table-row;
+  height: 100%;
+
+  position: relative;
+}
+
+.chapters-content {
+  position: absolute;
+  left: 25px; /* prev-page button */
+  right: 25px; /* next-page button */
+
+  height: 100%;
+
+  padding: 0 20px;
+  margin: 0 5px;
+
+  overflow-y: auto;
+}
+
+.chapters,
+.chapter {
+  display: none;
+}
+
+/* End chapter view */

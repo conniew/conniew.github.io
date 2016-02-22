@@ -1,0 +1,23 @@
+<div class="chapters-container" id="chapters-{{ include.title }}">
+
+  <div class="chapters-control">
+    Page
+    <input class="chapters-input" type="text"
+        onclick="this.select()"
+        onchange="setChapter('{{ include.title }}', +this.value - 1)">
+    of
+    <span class="chapters-total"></span>
+  </div>
+
+  <div class="chapters-frame"
+      onkeydown="handleChaptersKeypress('{{ include.title }}', event)">
+    <button class="prev-page" onclick="setChapter('{{ include.title }}', 'prev')"></button>
+    <div class="chapters-content" tabindex="0"></div>
+    <button class="next-page" onclick="setChapter('{{ include.title }}', 'next')"></button>
+  </div>
+
+  <script type="text/javascript" src="../scripts/chapters.js"></script>
+  <script type="text/javascript">
+    initChapters('{{ include.title }}');
+  </script>
+</div>
