@@ -1,7 +1,7 @@
 ---
 layout: permalink
 title: "Conilogues"
-date: "2016-02-16"
+date: "2016-02-21"
 subtitle: "Meta-post about this website."
 ---
 
@@ -67,7 +67,7 @@ Arrow keys will also help navigate between posts, and keyboard shortcuts on post
 TAB navigation is also preserved.
 </p>
 
-<h4>Image Views</h4>
+<h4>Image Viewer</h4>
 
 <p>
 Most images on the site show a preview overlay when clicked.
@@ -88,10 +88,27 @@ The navigation behavior also encompasses basic keyboard shortcuts.
 When the overlay is closed, the dynamically-created thumbnails are cleaned up, leaving the (hidden) blank overlay for re-initialization.
 </p>
 
-<h4>Book Views</h4>
+<h4>Book Viewer</h4>
+
+<h5>Image Format</h5>
 
 <p>
-[High Priority] A book-like page-turning format is in the immediate plans, for displaying certain forms of writing.
+Books that are primarily image-based, such as children's books, can be viewed in their own custom format.
+The book viewer is full-screen and supports paging back and forth via buttons, keyboard, or a slider.
+The template for the book viewer is similar to that of the image viewer, but in a standalone page rather than an overlay.
+</p>
+
+<p>
+The standalone template allows each book to have a separate URL, which in turn supports keeping some navigational state for each book.
+To enable direct linking and browser navigation, the current (odd-numbered) page is written to and read from a URL parameter each time it's changed.
+The parameter parsing is done in plain JavaScript, without regular expressions.
+Other than that, the rest of the JS bookkeeping (pun intended) is relatively straightforward.
+</p>
+
+<h5>Text Format</h5>
+
+<p>
+[High Priority] For writing projects that are primarily text, pagination can still be useful for longer pieces that have break points or chapters.
 </p>
 
 <h4>Pagination</h4>

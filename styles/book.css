@@ -14,7 +14,7 @@ body {
   white-space: nowrap;
 }
 
-#page-left {
+#book-container .page {
   display: inline-block;
 
   position: relative;
@@ -22,22 +22,19 @@ body {
   width: 50%;
   height: 100%;
 
+  padding: 10px;
+}
+
+#page-left {
   text-align: right;
 
-  padding: 10px 1px 10px 10px;
+  padding-right: 1px;
 }
 
 #page-right {
-  display: inline-block;
-
-  position: relative;
-
-  width: 50%;
-  height: 100%;
-
   text-align: left;
 
-  padding: 10px 10px 10px 1px;
+  padding-left: 1px;
 }
 
 #book-container .page img {
