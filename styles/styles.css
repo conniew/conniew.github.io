@@ -41,6 +41,10 @@ h1, h2 {
   color: #000000;
 }
 
+i {
+  color: #444444;
+}
+
 a {
   color: #8B0000;
   text-decoration: none;

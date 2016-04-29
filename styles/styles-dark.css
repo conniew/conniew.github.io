@@ -19,6 +19,10 @@ body.dark {
   color: #D6D6D6;
 }
 
+.dark i {
+  color: #CCCCCC;
+}
+
 .dark a {
   color: #8BBBBB;
 }
