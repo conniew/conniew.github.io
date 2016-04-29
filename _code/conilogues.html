@@ -7,16 +7,9 @@ subtitle: "Meta-post about this website."
 
 <p>
 Hello, World!
-Welcome to my website.
-Here is where I post my art, writing, programming, and brainstorming projects.
-It's meant to be a portfolio rather than a blog:
-it's a place for me to display my best works and show off what I have made.
-</p>
-
-<p>
-The website itself is also an ongoing programming project.
-As a web developer, of course I needed to build the website from scratch.
-This is the first iteration of the experiment, and it will continue to evolve.
+Welcome to my portfolio of art, writing, programming, and brainstorming projects.
+One of the projects on display here is this website itself.
+It began as a blank slate, and it has grown over time to include many features that help me to display my work effectively.
 </p>
 
 <h3>Infrastructure</h3>
@@ -32,87 +25,145 @@ The styling is a mix of basic CSS and some <a href="http://sass-lang.com/" targe
 The scripting is plain JavaScript all the way.
 </p>
 
-<h3>Site Features</h3>
+<h3>Theming</h3>
 
-<h4>Theming</h4>
+<p><i>Toggle the website theme in the bottom left.</i></p>
 
-<p>
-On a typical page, the website can be toggled between a light and dark theme using the button in the lower left.
-Theming was a challenge for two major reasons: SASS build rules in Jekyll, and static website content.
-This resulted in two major implementation efforts: theming in basic CSS, and storing user state with cookies.
-</p>
+<dl>
+  <dt>
+    <b>Design</b>
+  </dt>
+  <dd>
+    Each theme consists of roughly eight colors:
+    <ul>
+      <li>Primary text</li>
+      <li>Secondary text</li>
+      <li>Primary divider</li>
+      <li>Secondary divider</li>
+      <li>Primary background</li>
+      <li>Secondary background</li>
+      <li>Highlight</li>
+      <li>Link</li>
+    </ul>
+    <i>[TODO: Investigate accessibility requirements for the color values in each theme.]</i>
+  </dd>
+  <dt>
+    <b>Styling</b>
+  </dt>
+  <dd>
+    The default theme assigns colors prescriptively to elements.
+    Each other theme corresponds to a top-level class on the body, and CSS rules affecting colors are duplicated and overridden using each theme class.
+    Only one theme may be active at any time, and the added specificity of the theme class precludes the need to rely on cascade order.
+    <br><i>[TODO: Convert to SASS and rely on variables and overrides instead.]</i>
+    <br><i>[TODO: Create additional themes.]</i>
+  </dd>
+  <dt>
+    <b>Scripting</b>
+  </dt>
+  <dd>
+    Because the website is static, the theme is persisted across pages and visits by setting a cookie.
+    The cookie is checked on page load, and set via the toggle button.
+    If cookies are not enabled, the theme toggle is disabled.
+  </dd>
+</dl>
 
-<p>
-Plain CSS theming is an awful idea. 
-[Medium Priority] One day, this section will be amended to include an implementation that makes use of SASS variables and overrides.
-However, for now, theming is accomplished by toggling a top-level class and repeating all color-containing CSS rules with a <code>.dark</code> prefix.
-As part of this effort, it was necessary to distill all the website's colors into a small handful of values (perfect for SASS variables... but not actually using them).
-Currently these colors are somewhat arbitrary hex values; however, the day for an accessibility evaluation will come, at which point these will be replaced by RGBA values that meet accessibility contrast standards.
-</p>
+<h3>Keyboard Accessibility</h3>
 
-<p>
-Using cookies to store simple user state has been a much saner endeavor.
-The implementation is considerably simpler than the possible alternative of propagating URL query parameters to every page in the site (which also does not carry over well for separate visits).
-For every new visitor the theme defaults to "light," and the button to toggle theme is enabled only if cookies are enabled.
-Toggling the theme stores a simple <code>theme=[dark|light]</code> cookie with no expiration date.
-The cookie is checked at every page load to set the top-level theme class consistently for each user.
-</p>
+<dl>
+  <dt>
+    <b>Navigation</b>
+  </dt>
+  <dd>
+    <code>TAB</code> navigation is a consistent way to traverse the UI.
+    Elements that receive keyboard focus generally have indicative styles enabled.
+    A notable exception is the body of each post, which can receive focus for keyboard scrolling.
+  </dd>
+  <dt>
+    <b>Shortcuts</b>
+  </dt>
+  <dd>
+    In addition to being reachable through <code>TAB</code> navigation, each control button on the page has its own keyboard shortcut corresponding to its action.
+    Various operations on specific features also have keyboard shortcuts.
+    General patterns include:
+    <ul>
+      <li><code>ESC</code>: cancel/close</li>
+      <li><code>ENTER</code>/<code>SPACE</code>: activate/open</li>
+      <li><code>UP</code>/<code>DOWN</code>: navigation</li>
+      <li><code>LEFT</code>/<code>RIGHT</code>: pagination</li>
+    </ul>
+  </dd>
+</dl>
 
-<h4>Keyboard Navigation</h4>
+<h3>Image Viewer</h3>
 
-<p>
-The site supports some global keyboard shortcuts.
-One set is for using the control buttons in the gutters of a typical page, which should hopefully be self-explanatory.
-Arrow keys will also help navigate between posts, and keyboard shortcuts on posts make them act more like other actionable elements, such as buttons and links.
-TAB navigation is also preserved.
-</p>
+<i>Click an image to see the overlay.</i>
 
-<h4>Image Viewer</h4>
+<dl>
+  <dt>
+    <b>Templates</b>
+  </dt>
+  <dd>
+    The image overlay is a resident UI element that is dynamically repopulated when an image is clicked.
+    It contains all of the styling and logic that governs the image viewing interaction, and the template is included on each page.
+    Each image must then be hooked up to the viewer, and this pattern is captured in a reusable template. This template can be included in any post, and accepts one or a list of image URLs as a parameter.
+  </dd>
+  <dt>
+    <b>Scripting</b>
+  </dt>
+  <dd>
+    Most of the complexity of the image viewer lies in the thumbnail navigation for multiple images in a post.
+    The viewer does not keep an explicit state of which image is showing, nor does it maintain an ordered list of the thumbnail URLs.
+    Instead, it relies on event handling and a consistently maintained DOM state to display the correct image.
+    This is dependent on a correct initialization of the viewer, and consistent updates for each navigational event.
+  </dd>
+</dl>
 
-<p>
-Most images on the site show a preview overlay when clicked.
-This preview shows a larger image and gives the ability to browse through the other images in the same post.
-</p>
+<h3>Picture Book</h3>
 
-<p>
-Both the preview overlay and the in-page image archetype are written as reusable templates that hook up to the relevant event-handling behavior.
-The overlay itself is an empty container that is hidden, shown, and populated in JavaScript, and it is only included once per page.
-The image template is reusable per-post and accepts one or many image URLs to display.
-The rendered images come with the hook to initialize the overlay when clicked.
-</p>
+<i>Read a picture book to view this page archetype.</i>
 
-<p>
-The JavaScript behind the scenes mainly handles initializing the overlay and any event handling within the overlay.
-Each time the overlay is opened, the image and thumbnails are populated dynamically and hooked up to the behavior that allows navigation between images.
-The navigation behavior also encompasses basic keyboard shortcuts.
-When the overlay is closed, the dynamically-created thumbnails are cleaned up, leaving the (hidden) blank overlay for re-initialization.
-</p>
+<dl>
+  <dt>
+    <b>Template</b>
+  </dt>
+  <dd>
+    The picture book viewer is its own reusable page archetype.
+    It relies on file structure rather than templating to populate the pages with the right images.
+    This makes it possible to compose a book just by saving all the image resources and naming them consistently.
+  </dd>
+  <dt>
+    <b>Navigation</b>
+  </dt>
+  <dd>
+    The book viewer benefits from persistent navigation, which is achieved by maintaining a URL parameter pointing to the current page.
+    Direct linking to a page is possible using the URL parameter, which maintains the even/odd page pairings of a physical book.
+    All methods of turning the page will update the URL parameter to match.
+  </dd>
+</dl>
 
-<h4>Book Viewer</h4>
+<h3>Chapter Reader</h3>
 
-<h5>Image Format</h5>
+<i>View a lengthy writing piece to see the chapter reader.</i>
 
-<p>
-Books that are primarily image-based, such as children's books, can be viewed in their own custom format.
-The book viewer is full-screen and supports paging back and forth via buttons, keyboard, or a slider.
-The template for the book viewer is similar to that of the image viewer, but in a standalone page rather than an overlay.
-</p>
+<dl>
+  <dt>
+    <b>Template</b>
+  </dt>
+  <dd>
+    Unlike most other complex features of the website, the chapter viewer is used directly within a post and can therefore be included multiple times on a page.
+    The text content for the post must be contained within chapter-separated DOM elements, which hide the content but make it available to the chapter viewer.
+    The chapter viewer itself is a reusable template that pulls from this structure to populate the display with the current chapter's text.
+  </dd>
+  <dt>
+    <b>Navigation</b>
+  </dt>
+  <dd>
+    Navigation in the chapter viewer does not persist across page visits, but the current chapter number is kept as state for each post.
+    The input used for display and navigation does some simple validation to prevent navigating to a chapter that does not exist.
+    Otherwise, the pagination is treated similarly to other features.
+  </dd>
+</dl>
 
-<p>
-The standalone template allows each book to have a separate URL, which in turn supports keeping some navigational state for each book.
-To enable direct linking and browser navigation, the current (odd-numbered) page is written to and read from a URL parameter each time it's changed.
-The parameter parsing is done in plain JavaScript, without regular expressions.
-Other than that, the rest of the JS bookkeeping (pun intended) is relatively straightforward.
-</p>
+<h3>Post Pagination</h3>
 
-<h5>Text Format</h5>
-
-<p>
-[High Priority] For writing projects that are primarily text, pagination can still be useful for longer pieces that have break points or chapters.
-</p>
-
-<h4>Pagination</h4>
-
-<p>
-[Medium Priority] Pagination of posts is on the horizon, to manage (future) large numbers of posts.
-</p>
+<i>[TODO: Implement pagination of posts.]</i>
