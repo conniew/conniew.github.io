@@ -6,9 +6,39 @@ subtitle: "Splash page of ilogues.com"
 ---
 
 <p>
-<a href="http://www.ilogues.com" target="_blank">http://www.ilogues.com</a><br><br>
+<a href="http://www.ilogues.com" target="_blank">http://www.ilogues.com</a>
 </p>
 
+<h3>Page Design</h3>
+
 <p>
-More Soon
+Two of us share this domain, neither touching the other's half.
+Our goals, focus, and style are distinct, yet we share two halves of a single space.
+The front page is an art project, designed to capture this dynamic.
+The inspiration came from my ideas, but the execution was as everything else: a shared but disjoint effort.
+</p>
+
+<h3>Personal Half</h3>
+
+<p>
+2d, colorful, HTML/CSS/JS-based, randomized, sporadic, and mosaic-like.
+These were the pieces that captured my imagination and made the left half into my half.
+The choice of patterns and transitions gave me room to be creative, and the many moving parts made the implementation challenging.
+</p>
+
+<h4>Patterns</h4>
+
+<p>
+There are nine patterns available for the half-circle.
+Each of them is captured by a black-and-white image, and the triangles are placed using rejection sampling with the image as a bitmap.
+The patterns are simple and recognizable as different even with the random distribution of triangles.
+</p>
+
+<h4>Transitions</h4>
+
+<p>
+Every ten seconds, the triangles undergo one of five transitions.
+All the transitions have a randomized aspect, adding to the general chaos.
+They are applied by modifying styles directly on each triangle and relying on CSS transitions to complete the animation.
+Because there are many triangles (two hundred), the transitions only change the <code>transition</code> and <code>opacity</code> properties of each triangle, which can be efficiently animated with CSS.
 </p>
