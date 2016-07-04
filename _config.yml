@@ -1,11 +1,16 @@
 collections:
   pictures:
+    order: 1
     output: true
   words:
+    order: 2
     output: true
   code:
+    order: 3
     output: true
   thoughts:
+    order: 4
     output: true
   me:
+    order: 5
     output: true
