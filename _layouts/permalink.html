@@ -38,10 +38,13 @@
 
   <div id="footer">
     <a href="../">home</a>
-    {% for collection in site.collections %}
-      {% if collection.label != 'posts' %}
-        <a href="../{{ collection.label }}">
-          {{collection.label}}
+    {% assign collections = site.collections | sort: 'order' %}
+    {% for collection in collections %}
+      {% capture collectionName %}{{ collection.label }}{% endcapture %}
+      {% if collectionName != 'posts' %}
+        <a {% if collectionName != page.path %} href="../{{ collectionName }} {% endif %}"
+                  {% if collectionName == page.path %} class="active" {% endif %}>
+          {{collectionName}}
         </a>
       {% endif %}
     {% endfor %}
