@@ -66,6 +66,7 @@ var _words = [
   'schism',
   'seizure',
   'sentinel',
+  'sequoia',
   'sinister',
   'spatula',
   'susurrus',
