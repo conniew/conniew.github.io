@@ -11,6 +11,9 @@ collections:
   thoughts:
     order: 4
     output: true
-  me:
+  things:
     order: 5
+    output: true
+  me:
+    order: 6
     output: true
