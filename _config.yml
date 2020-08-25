@@ -5,15 +5,12 @@ collections:
   words:
     order: 2
     output: true
-  code:
+  things:
     order: 3
     output: true
-  thoughts:
+  code:
     order: 4
     output: true
-  things:
-    order: 5
-    output: true
   me:
-    order: 6
+    order: 5
     output: true
