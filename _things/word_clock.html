@@ -1,0 +1,76 @@
+---
+layout: permalink
+date: "2022-11-22"
+title: "Word Clock"
+subtitle: "gadget"
+---
+
+<h4>Overview</h4>
+
+<p>
+In early 2020 I took an instructor-led course that encouraged us to use a variety of equipment and materials in the makerspace by completing a hands-on project.
+The project was to create a functioning clock that would tell time by lighting up phrases such as "It is now a quarter to seven."
+The instructor provided some SVG templates, CAD modules, and boilerplate code, but each student's clock was a different size, shape, and layout.
+I chose the largest picture frame (12 inches) and designed a circular layout that included additional information such as the day of the week.
+</p>
+
+{% include image.html urls="../things/word-clock.gif" %}
+<center><i>Functioning word clock showing the transition from 2:32pm to 2:33pm on a Tuesday afternoon. The clock gets the current time from the internet, requiring a Wi-fi connection.</i></center>
+
+{% include image.html urls="../things/word-clock-diagram.png" %}
+<center><i>Interior diagram of the word clock, courtesy of the course instructor. From top to bottom: picture frame; picture frame glass painted and laser-etched with the clock layout; 3d printed light baffle; LED neopixel grid and ESP32 chip attached to a chipboard backing; picture frame backing.</i></center>
+
+{% include image.html urls="../things/word-clock-layout.svg" %}
+<center><i>Custom layout of clock lettering. The clock supports phrases such as "It is around five minutes after twelve Wednesday night" or "It is around a quarter past twelve Wednesday night."</i></center>
+
+<h4>Design</h4>
+
+<ul>
+  <li>Inkscape</li>
+  <li>OpenSCAD</li>
+</ul>
+
+<h4>Equipment</h4>
+
+<ul>
+  <li>Paint brush</li>
+  <li>Laser cutter</li>
+  <li>3D printer</li>
+  <li>Soldering iron<li>
+</ul>
+
+<h4>Materials</h4>
+
+<ul>
+  <li>Picture frame: thick frame, glass, foam spacer, backing</li>
+  <li>Black paint</li>
+  <li>PLA</li>
+  <li>Chipboard, plywood</li>
+  <li>Adhesives and fasteners: tape, glue, screws</li>
+  <li>Wiring: insulated wires, solder, heatshrink tubing, capacitor</li>
+  <li>Electonics: LED neopixels, ESP32 chip, level shifter, power source</li>
+</ul>
+
+<h4>Outsourcing</h4>
+
+<ul>
+  <li>
+    Resources provided by the course instructor:
+    <ul>
+      <li>SVG template for clock lettering layout.</li>
+      <li>CAD modules for light baffle model.</li>
+      <li>SVG template for neopixel grid layout.</li>
+      <li>Python boilerplate for ESP32 chip program.</li>
+    </ul>
+    Exact size, layout, and execution varied per student.
+  </li>
+</ul>
+
+<h4>Assets</h4>
+
+<ul>
+  <li><a href="../things/word-clock-layout.svg">Custom lettering pattern</a></li>
+  <li><a href="../things/word-clock-print-1.stl">Custom light baffle - Print 1</a></li>
+  <li><a href="../things/word-clock-print-2.stl">Custom light baffle - Print 2</a></li>
+  <li><a href="../things/word-clock-code.py">Sample of custom python code</a></li>
+</ul>
