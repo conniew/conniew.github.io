@@ -1,0 +1,2 @@
+{% assign anchor = include.text | downcase | split: ' ' | join: '-' %}
+<h4 id="{{ anchor }}">{{ include.text }} <a href="#{{ anchor }}">&#128279;</a></h4>
