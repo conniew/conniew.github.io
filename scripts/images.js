@@ -62,7 +62,6 @@ function openImageOverlay(urls, url) {
   if (urls.length === 1) {
     imageThumbnailContainer.classList.add("hidden");
     imageDisplay.classList.add("full");
-    return;
   }
 
   for (var i = 0; i < urls.length; i++) {
