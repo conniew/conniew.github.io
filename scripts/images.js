@@ -1,7 +1,9 @@
 // Overlays for lazy-loaded images
 
 var imageOverlay = document.querySelector('#image-overlay');
+var imageDisplay = document.querySelector('#image-display');
 var imageContainer = imageOverlay.querySelector('#image-container');
+var imageThumbnailContainer = imageOverlay.querySelector('#image-thumbnail-container');
 var imageThumbnails = imageOverlay.querySelector('#image-thumbnails');
 
 // [private] Get the current active thumbnail and make it inactive
@@ -56,6 +58,13 @@ function openImageOverlay(urls, url) {
 
   // Populate the thumbnails
   urls = urls.split(' ').filter(Boolean);
+
+  if (urls.length === 1) {
+    imageThumbnailContainer.classList.add("hidden");
+    imageDisplay.classList.add("full");
+    return;
+  }
+
   for (var i = 0; i < urls.length; i++) {
     var button = document.createElement('button');
     button.onclick = function(event) {

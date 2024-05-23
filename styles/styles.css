@@ -583,6 +583,10 @@ div:focus,
   bottom: 120px; /* Thumbnail container */
 }
 
+#image-display.full {
+  bottom: 0;
+}
+
 #image-display .close {
   position: absolute;
   top: 10px;
@@ -649,6 +653,10 @@ div:focus,
   right: 0;
   bottom: 0;
   height: 120px;
+}
+
+#image-thumbnail-container.hidden {
+  display: none;
 }
 
 #image-thumbnails {
