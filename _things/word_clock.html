@@ -45,7 +45,7 @@ Ultimately, even with the extra phrases and days of the week, there are still 4 
 Other challenges included the size of the grid and the circular arrangement that I chose.
 The size meant that the light baffle would not fit as a single 3d print in the Prusa i3 MK3S printers, requiring changing the model and printing and assembling it in pieces.
 It also led to an unreasonable amount of wiring and soldering, and some wild guessing for the electrical components.
-Last but not least, though the grid was circular, the wiring was linear, requiring a complex indexing system in the code that would convert between (x,y) coordinates and linear coordinates along the zigzagging LED strip.
+Last but not least, the grid was circular but the LEDs were wired in a zigzagging linear pattern, requiring code that converted from (x,y) coordinates (where (0,0) is the 'S' in the center of the circular grid) to linear coordinates that indicated which LED to light up.
 </p>
 
 <h4>Design</h4>
