@@ -17,11 +17,36 @@ I chose the largest picture frame (12 inches) and designed a circular layout tha
 {% include image.html urls="../things/word-clock.gif" %}
 <center><i>Functioning word clock showing the transition from 2:32pm to 2:33pm on a Tuesday afternoon. The clock gets the current time from the internet, requiring a Wi-fi connection.</i></center>
 
+<p>
+Each layer of the word clock used a different tool in the makerspace and presented unique design and execution challenges.
+The glass surface contained the letter grid, which we designed and etched using paint and a laser cutter.
+The light baffle, which ensured that each LED lit up only one letter, was 3d printed.
+The LED array required eight billion years of soldering.
+And all of it is custom-programmed in micropython using an ESP32 chip.
+</p>
+
 {% include image.html urls="../things/word-clock-diagram.png" %}
 <center><i>Interior diagram of the word clock, courtesy of the course instructor. From top to bottom: picture frame; picture frame glass painted and laser-etched with the clock layout; 3d printed light baffle; LED neopixel grid and ESP32 chip attached to a chipboard backing; picture frame backing.</i></center>
 
+<p>
+The hardest design challenge was arranging the letter grid.
+Commercial word clocks have spaces between words such as "half" and "past", maintaining readability even if the words appear consecutively in the grid.
+This letter grid did not contain any spaces, so words that lit up simultaneously could not be positioned consecutively.
+Since my grid was large enough to accommodate several alternative phrases, I got around this by using different phrases together.
+For example, though "past" and "after" can sometimes be interchangeable, "past" only appears after "half" or "a quarter," while "after" is only paired with "5/10/20/25 minutes."
+Similar logic applies to "to" and "before."
+Ultimately, even with the extra phrases and days of the week, there are still 4 dead grid cells that are never lit up.
+</p>
+
 {% include image.html urls="../things/word-clock-layout.svg" %}
 <center><i>Custom layout of clock lettering. The clock supports phrases such as "It is around five minutes after twelve Wednesday night" or "It is around a quarter past twelve Wednesday night."</i></center>
+
+<p>
+Other challenges included the size of the grid and the circular arrangement that I chose.
+The size meant that the light baffle would not fit as a single 3d print in the Prusa i3 MK3S printers, requiring changing the model and printing and assembling it in pieces.
+It also led to an unreasonable amount of wiring and soldering, and some wild guessing for the electrical components.
+Last but not least, though the grid was circular, the wiring was linear, requiring a complex indexing system in the code that would convert between (x,y) coordinates and linear coordinates along the zigzagging LED strip.
+</p>
 
 <h4>Design</h4>
 
